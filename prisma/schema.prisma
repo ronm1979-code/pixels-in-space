@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Game {
+  id              String    @id @default(cuid())
+  slug            String    @unique
+  title           String
+  description     String?
+  coverImage      String?
+  releaseDate     DateTime?
+  developer       String?
+  publisher       String?
+  platforms       String    @default("[]")
+  genres          String    @default("[]")
+  steamAppId      String?   @unique
+  rawgSlug        String?   @unique
+  igdbId          String?   @unique
+  metacriticScore Int?
+  steamScore      Int?
+  averageScore    Float?
+  articles        Article[]
+  reviews         Review[]
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([releaseDate])
+  @@index([averageScore])
+}
+
+model Article {
+  id                String       @id @default(cuid())
+  slug              String       @unique
+  title             String
+  content           String
+  summary           String?
+  imageUrl          String?
+  sourceUrl         String?
+  sourceName        String?
+  category          String       @default("news")
+  tags              String       @default("[]")
+  gameId            String?
+  game              Game?        @relation(fields: [gameId], references: [id])
+  status            String       @default("draft")
+  publishedAt       DateTime?
+  sourcePublishedAt DateTime?
+  pipelineRunId     String?
+  pipelineRun       PipelineRun? @relation(fields: [pipelineRunId], references: [id])
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([category])
+  @@index([gameId])
+}
+
+model Review {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  gameId        String       @unique
+  game          Game         @relation(fields: [gameId], references: [id])
+  title         String
+  content       String
+  score         Float
+  pros          String       @default("[]")
+  cons          String       @default("[]")
+  sourceReviews String       @default("[]")
+  verdict       String?
+  status        String       @default("draft")
+  publishedAt   DateTime?
+  pipelineRunId String?
+  pipelineRun   PipelineRun? @relation(fields: [pipelineRunId], references: [id])
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@index([score])
+  @@index([status, publishedAt])
+}
+
+model Source {
+  id          String    @id @default(cuid())
+  name        String
+  type        String
+  url         String
+  config      String    @default("{}")
+  enabled     Boolean   @default(true)
+  lastFetched DateTime?
+  errorCount  Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model PipelineRun {
+  id               String    @id @default(cuid())
+  type             String
+  status           String    @default("running")
+  articlesFound    Int       @default(0)
+  articlesNew      Int       @default(0)
+  reviewsGenerated Int       @default(0)
+  errors           String    @default("[]")
+  startedAt        DateTime  @default(now())
+  completedAt      DateTime?
+  articles         Article[]
+  reviews          Review[]
+}
+
+model Setting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}

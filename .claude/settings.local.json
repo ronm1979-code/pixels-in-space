@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm --version)",
+      "Bash(where node:*)",
+      "Bash(winget install:*)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Read(//c/Ron/RonProjects/**)",
+      "Bash(npx create-next-app@latest gaming-website --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma:*)",
+      "Bash(npx tsx:*)",
+      "Bash(node -e \"const { PrismaClient } = require\\(''''@prisma/client''''\\); console.log\\(Object.getOwnPropertyNames\\(PrismaClient.prototype\\)\\)\")",
+      "Bash(DATABASE_URL=\"file:./prisma/dev.db\" npx tsx prisma/seed.ts)",
+      "Bash(node -e \"const m = require\\(''@prisma/adapter-libsql''\\); console.log\\(Object.keys\\(m\\)\\)\")",
+      "Bash(node -e \"const path = require\\(''path''\\); console.log\\(path.join\\(process.cwd\\(\\), ''prisma'', ''dev.db''\\)\\)\")",
+      "Bash(rm -f prisma/dev.db prisma/dev.db-journal)",
+      "Bash(rm -rf prisma/migrations)",
+      "Bash(npm uninstall:*)",
+      "Bash(rm -f prisma/prisma.config.ts prisma/dev.db prisma/dev.db-journal)",
+      "Bash(npx next:*)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
