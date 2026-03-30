@@ -21,8 +21,8 @@ export function ReviewCard({
 }: ReviewCardProps) {
   return (
     <Link href={`/reviews/${slug}`} className="group block">
-      <article className="card-hover flex gap-4 rounded-xl border border-border/50 bg-bg-card/50 p-4">
-        <div className="relative h-28 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-bg-surface">
+      <article className="card-hover flex gap-4 rounded-xl border border-border bg-white p-4 shadow-sm">
+        <div className="relative h-28 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
           {gameCoverImage ? (
             <Image
               src={gameCoverImage}
@@ -32,7 +32,7 @@ export function ReviewCard({
               sizes="80px"
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20 text-xs text-text-muted">
+            <div className="flex h-full w-full items-center justify-center gradient-hero text-xs text-text-muted">
               N/A
             </div>
           )}
@@ -42,7 +42,7 @@ export function ReviewCard({
             <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
               Review
             </p>
-            <h3 className="mt-0.5 line-clamp-1 font-semibold transition-colors group-hover:text-primary-light">
+            <h3 className="mt-0.5 line-clamp-1 font-semibold transition-colors group-hover:text-primary">
               {gameTitle}
             </h3>
           </div>

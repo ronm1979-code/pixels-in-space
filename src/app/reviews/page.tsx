@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ReviewCard } from "@/components/reviews/ReviewCard";
 import { Pagination } from "@/components/ui/Pagination";
 import { REVIEWS_PER_PAGE } from "@/lib/constants";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default async function ReviewsPage({
   const params = await searchParams;
   const page = Math.max(1, parseInt(params.page ?? "1"));
 
-  const [reviews, total] = await Promise.all([
+  const [reviews, total, heroGame] = await Promise.all([
     prisma.review.findMany({
       where: { status: "published" },
       orderBy: { publishedAt: "desc" },
@@ -29,6 +30,11 @@ export default async function ReviewsPage({
       include: { game: true },
     }),
     prisma.review.count({ where: { status: "published" } }),
+    prisma.game.findFirst({
+      where: { coverImage: { not: null }, reviews: { some: { status: "published" } } },
+      orderBy: { updatedAt: "desc" },
+      select: { coverImage: true },
+    }),
   ]);
 
   const totalPages = Math.ceil(total / REVIEWS_PER_PAGE);
@@ -36,16 +42,29 @@ export default async function ReviewsPage({
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">Game Reviews</h1>
-          <p className="mt-1 text-text-muted">
+
+      <section className="relative overflow-hidden bg-gray-900">
+        {heroGame?.coverImage && (
+          <Image
+            src={heroGame.coverImage}
+            alt=""
+            fill
+            className="object-cover opacity-30"
+            sizes="100vw"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-bg-body" />
+        <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-10 lg:px-8">
+          <h1 className="text-3xl font-bold text-white">Game Reviews</h1>
+          <p className="mt-1 text-white/60">
             Honest scores and expert analysis
           </p>
         </div>
+      </section>
 
+      <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
         {reviews.length === 0 ? (
-          <div className="rounded-xl border border-border/50 bg-bg-card/50 py-20 text-center">
+          <div className="rounded-xl border border-border bg-white py-20 text-center shadow-sm">
             <p className="text-text-muted">No reviews published yet.</p>
           </div>
         ) : (

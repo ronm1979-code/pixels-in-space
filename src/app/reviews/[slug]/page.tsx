@@ -53,7 +53,7 @@ export default async function ReviewPage({
       <main className="mx-auto max-w-3xl px-4 py-8 lg:px-0">
         {/* Review header */}
         <div className="mb-8 flex gap-6">
-          <div className="relative h-44 w-32 flex-shrink-0 overflow-hidden rounded-xl bg-bg-surface">
+          <div className="relative h-44 w-32 flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
             {review.game.coverImage ? (
               <Image
                 src={review.game.coverImage}
@@ -62,7 +62,7 @@ export default async function ReviewPage({
                 className="object-cover"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20 text-text-muted">
+              <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
                 N/A
               </div>
             )}
@@ -84,7 +84,7 @@ export default async function ReviewPage({
             <div className="flex items-center gap-4">
               <Link
                 href={`/games/${review.game.slug}`}
-                className="text-sm text-text-muted hover:text-primary-light"
+                className="text-sm text-text-muted hover:text-primary"
               >
                 View game page
               </Link>
@@ -104,14 +104,14 @@ export default async function ReviewPage({
         {(pros.length > 0 || cons.length > 0) && (
           <div className="mb-10 grid gap-4 md:grid-cols-2">
             {pros.length > 0 && (
-              <div className="rounded-xl border border-score-high/20 bg-score-high/5 p-5">
-                <h3 className="mb-3 flex items-center gap-2 font-semibold text-score-high">
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
+                <h3 className="mb-3 flex items-center gap-2 font-semibold text-emerald-600">
                   <ThumbsUp className="h-4 w-4" /> What Works
                 </h3>
                 <ul className="space-y-2">
                   {pros.map((pro, i) => (
                     <li key={i} className="flex gap-2 text-sm text-text-secondary">
-                      <span className="mt-0.5 text-score-high">+</span>
+                      <span className="mt-0.5 text-emerald-600">+</span>
                       {pro}
                     </li>
                   ))}
@@ -119,14 +119,14 @@ export default async function ReviewPage({
               </div>
             )}
             {cons.length > 0 && (
-              <div className="rounded-xl border border-score-low/20 bg-score-low/5 p-5">
-                <h3 className="mb-3 flex items-center gap-2 font-semibold text-score-low">
+              <div className="rounded-xl border border-red-200 bg-red-50 p-5">
+                <h3 className="mb-3 flex items-center gap-2 font-semibold text-red-600">
                   <ThumbsDown className="h-4 w-4" /> What Doesn&apos;t
                 </h3>
                 <ul className="space-y-2">
                   {cons.map((con, i) => (
                     <li key={i} className="flex gap-2 text-sm text-text-secondary">
-                      <span className="mt-0.5 text-score-low">&minus;</span>
+                      <span className="mt-0.5 text-red-600">&minus;</span>
                       {con}
                     </li>
                   ))}
@@ -144,13 +144,13 @@ export default async function ReviewPage({
 
         {/* Source scores */}
         {sourceReviews.length > 0 && (
-          <section className="border-t border-border/50 pt-8">
+          <section className="border-t border-border pt-8">
             <h2 className="mb-4 text-lg font-bold">Score Breakdown</h2>
             <div className="grid gap-3">
               {sourceReviews.map((sr, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between rounded-lg border border-border/30 bg-bg-card/30 px-4 py-3"
+                  className="flex items-center justify-between rounded-lg border border-border bg-white shadow-sm px-4 py-3"
                 >
                   <span className="text-sm font-medium">{sr.source}</span>
                   <ScoreBadge score={sr.score} size="sm" />

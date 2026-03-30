@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Calendar, Building2, Layers } from "lucide-react";
+import { Calendar, Building2, Layers, Play } from "lucide-react";
 
 export async function generateMetadata({
   params,
@@ -27,6 +27,13 @@ export async function generateMetadata({
       images: game.coverImage ? [game.coverImage] : undefined,
     },
   };
+}
+
+function getYouTubeId(url: string): string | null {
+  const match = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+  );
+  return match?.[1] ?? null;
 }
 
 export default async function GamePage({
@@ -51,24 +58,41 @@ export default async function GamePage({
 
   const platforms = parseJsonField<string[]>(game.platforms, []);
   const genres = parseJsonField<string[]>(game.genres, []);
+  const screenshots = parseJsonField<string[]>(game.screenshots, []);
+  const youtubeId = game.trailerUrl ? getYouTubeId(game.trailerUrl) : null;
 
   return (
     <>
       <Header />
+
+      {/* Hero banner with cover image */}
+      {game.coverImage && (
+        <section className="relative h-64 overflow-hidden bg-gray-900 md:h-80">
+          <Image
+            src={game.coverImage}
+            alt={game.title}
+            fill
+            className="object-cover opacity-40"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-bg-body" />
+        </section>
+      )}
+
       <main className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-        {/* Hero */}
+        {/* Game info */}
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:gap-8">
-          <div className="relative h-80 w-56 flex-shrink-0 overflow-hidden rounded-2xl bg-bg-surface shadow-2xl md:h-96 md:w-64">
+          <div className="-mt-32 relative h-80 w-56 flex-shrink-0 overflow-hidden rounded-2xl border-4 border-white bg-gray-100 shadow-2xl md:h-96 md:w-64">
             {game.coverImage ? (
               <Image
                 src={game.coverImage}
                 alt={game.title}
                 fill
                 className="object-cover"
-                priority
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20 text-text-muted">
+              <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
                 No Image
               </div>
             )}
@@ -122,7 +146,7 @@ export default async function GamePage({
               </p>
             )}
 
-            {/* Scores row */}
+            {/* Scores */}
             <div className="flex gap-5">
               {game.averageScore != null && (
                 <div className="text-center">
@@ -146,13 +170,56 @@ export default async function GamePage({
           </div>
         </div>
 
+        {/* Trailer */}
+        {youtubeId && (
+          <section className="mb-12">
+            <h2 className="mb-4 flex items-center gap-2 text-xl font-bold">
+              <Play className="h-5 w-5 text-primary" /> Trailer
+            </h2>
+            <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
+              <div className="relative aspect-video">
+                <iframe
+                  src={`https://www.youtube.com/embed/${youtubeId}`}
+                  title={`${game.title} Trailer`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Screenshots */}
+        {screenshots.length > 0 && (
+          <section className="mb-12">
+            <h2 className="mb-4 text-xl font-bold">Screenshots</h2>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {screenshots.map((src, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-video overflow-hidden rounded-xl border border-border shadow-sm"
+                >
+                  <Image
+                    src={src}
+                    alt={`${game.title} screenshot ${i + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Review */}
         {review && (
           <section className="mb-12">
             <h2 className="mb-4 text-xl font-bold">Our Review</h2>
             <Link
               href={`/reviews/${review.slug}`}
-              className="card-hover block rounded-xl border border-border/50 bg-bg-card/50 p-6"
+              className="card-hover block rounded-xl border border-border bg-white shadow-sm p-6"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>

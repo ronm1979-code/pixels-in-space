@@ -4,7 +4,7 @@ import type { CollectedArticle } from "@/types";
 const parser = new Parser({
   timeout: 10000,
   headers: {
-    "User-Agent": "GamePulse/1.0 (Gaming News Aggregator)",
+    "User-Agent": "PixelsInSpace/1.0 (Gaming News Aggregator)",
   },
 });
 

@@ -8,7 +8,7 @@ async function rawgFetch<T>(path: string): Promise<T> {
   if (!key) throw new Error("RAWG_API_KEY not set");
   const separator = path.includes("?") ? "&" : "?";
   const res = await fetch(`${BASE}${path}${separator}key=${key}`, {
-    headers: { "User-Agent": "GamePulse/1.0" },
+    headers: { "User-Agent": "PixelsInSpace/1.0" },
   });
   if (!res.ok) throw new Error(`RAWG API error: ${res.status}`);
   return res.json();

@@ -9,21 +9,21 @@ export function ScoreBadge({
 }) {
   const color =
     score >= 75
-      ? "from-score-high/20 to-score-high/5 text-score-high border-score-high/30"
+      ? "bg-emerald-500 text-white"
       : score >= 50
-        ? "from-score-mid/20 to-score-mid/5 text-score-mid border-score-mid/30"
-        : "from-score-low/20 to-score-low/5 text-score-low border-score-low/30";
+        ? "bg-amber-500 text-white"
+        : "bg-red-500 text-white";
 
   const sizeClass = {
-    sm: "h-9 w-9 text-xs",
-    md: "h-11 w-11 text-sm",
-    lg: "h-16 w-16 text-xl",
+    sm: "h-9 w-9 text-xs rounded-lg",
+    md: "h-11 w-11 text-sm rounded-xl",
+    lg: "h-16 w-16 text-xl rounded-2xl",
   }[size];
 
   return (
     <div
       className={cn(
-        "flex items-center justify-center rounded-xl border bg-gradient-to-br font-bold",
+        "flex items-center justify-center font-bold shadow-sm",
         color,
         sizeClass
       )}

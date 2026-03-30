@@ -28,8 +28,8 @@ export function NewsCard({
   if (featured) {
     return (
       <Link href={`/news/${slug}`} className="group block">
-        <article className="card-hover relative overflow-hidden rounded-2xl">
-          <div className="relative aspect-[21/9] bg-bg-card">
+        <article className="card-hover relative overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative aspect-[21/9] bg-gray-100">
             {imageUrl ? (
               <Image
                 src={imageUrl}
@@ -40,22 +40,22 @@ export function NewsCard({
                 priority
               />
             ) : (
-              <div className="h-full w-full bg-gradient-to-br from-primary/20 to-accent/20" />
+              <div className="h-full w-full gradient-hero" />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
               <Badge variant={category} className="mb-3">
                 {category}
               </Badge>
-              <h2 className="mb-2 text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
+              <h2 className="mb-2 text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
                 {title}
               </h2>
               {summary && (
-                <p className="mb-3 line-clamp-2 max-w-2xl text-sm text-text-secondary md:text-base">
+                <p className="mb-3 line-clamp-2 max-w-2xl text-sm text-white/80 md:text-base">
                   {summary}
                 </p>
               )}
-              <span className="text-xs text-text-muted">
+              <span className="text-xs text-white/60">
                 {timeAgo(publishedAt ?? createdAt)}
               </span>
             </div>
@@ -67,8 +67,8 @@ export function NewsCard({
 
   return (
     <Link href={`/news/${slug}`} className="group block">
-      <article className="card-hover overflow-hidden rounded-xl bg-bg-card/50 border border-border/50">
-        <div className="relative aspect-video overflow-hidden bg-bg-surface">
+      <article className="card-hover overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+        <div className="relative aspect-video overflow-hidden bg-gray-100">
           {imageUrl ? (
             <Image
               src={imageUrl}
@@ -78,9 +78,8 @@ export function NewsCard({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : (
-            <div className="h-full w-full bg-gradient-to-br from-primary/10 to-accent/10" />
+            <div className="h-full w-full gradient-hero" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
         </div>
         <div className="p-5">
           <div className="mb-3 flex items-center gap-2">
@@ -89,7 +88,7 @@ export function NewsCard({
               {timeAgo(publishedAt ?? createdAt)}
             </span>
           </div>
-          <h3 className="mb-2 line-clamp-2 text-[15px] font-semibold leading-snug transition-colors group-hover:text-primary-light">
+          <h3 className="mb-2 line-clamp-2 text-[15px] font-semibold leading-snug transition-colors group-hover:text-primary">
             {title}
           </h3>
           {summary && (

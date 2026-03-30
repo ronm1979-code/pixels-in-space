@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
 
 const variants: Record<string, string> = {
-  default: "bg-white/5 text-text-secondary border-white/10",
-  news: "bg-neon-blue/10 text-neon-blue border-neon-blue/20",
-  feature: "bg-primary/10 text-primary-light border-primary/20",
-  guide: "bg-neon/10 text-neon border-neon/20",
-  rumor: "bg-score-mid/10 text-score-mid border-score-mid/20",
-  review: "bg-accent/10 text-accent-light border-accent/20",
-  published: "bg-neon/10 text-neon border-neon/20",
-  draft: "bg-score-mid/10 text-score-mid border-score-mid/20",
-  archived: "bg-score-low/10 text-score-low border-score-low/20",
+  default: "bg-gray-100 text-gray-600 border-gray-200",
+  news: "bg-blue-50 text-blue-700 border-blue-200",
+  feature: "bg-purple-50 text-purple-700 border-purple-200",
+  guide: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  rumor: "bg-amber-50 text-amber-700 border-amber-200",
+  review: "bg-cyan-50 text-cyan-700 border-cyan-200",
+  published: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  draft: "bg-amber-50 text-amber-700 border-amber-200",
+  archived: "bg-red-50 text-red-700 border-red-200",
 };
 
 export function Badge({

@@ -3,15 +3,15 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "GamePulse - Gaming News, Reviews & Coverage",
-    template: "%s | GamePulse",
+    default: "Pixels in Space - Gaming News, Reviews & Coverage",
+    template: "%s | Pixels in Space",
   },
   description:
     "Breaking gaming news, expert reviews, and in-depth coverage of the biggest games. Your daily source for everything gaming.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "GamePulse",
+    siteName: "Pixels in Space",
   },
 };
 
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-bg-dark text-text-primary antialiased">
+      <body className="min-h-screen bg-bg-body text-text-primary antialiased">
         {children}
       </body>
     </html>

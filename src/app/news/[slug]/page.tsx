@@ -98,13 +98,13 @@ export default async function ArticlePage({
 
         {/* Game link */}
         {article.game && (
-          <div className="mb-12 rounded-xl border border-border/50 bg-bg-card/50 p-5">
+          <div className="mb-12 rounded-xl border border-border bg-white shadow-sm p-5">
             <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-text-muted">
               Related Game
             </p>
             <Link
               href={`/games/${article.game.slug}`}
-              className="text-lg font-semibold text-primary-light hover:underline"
+              className="text-lg font-semibold text-primary hover:underline"
             >
               {article.game.title}
             </Link>
@@ -113,16 +113,16 @@ export default async function ArticlePage({
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
-          <section className="border-t border-border/50 pt-10">
+          <section className="border-t border-border pt-10">
             <h2 className="mb-5 text-xl font-bold">More Stories</h2>
             <div className="grid gap-3">
               {relatedArticles.map((related) => (
                 <Link
                   key={related.id}
                   href={`/news/${related.slug}`}
-                  className="group rounded-xl border border-border/30 bg-bg-card/30 p-4 transition-all hover:border-border-light hover:bg-bg-card/60"
+                  className="group rounded-xl border border-border bg-white shadow-sm p-4 transition-all hover:border-primary/20 hover:bg-purple-50/50"
                 >
-                  <h3 className="font-medium transition-colors group-hover:text-primary-light">
+                  <h3 className="font-medium transition-colors group-hover:text-primary">
                     {related.title}
                   </h3>
                   <p className="mt-1 text-sm text-text-muted">

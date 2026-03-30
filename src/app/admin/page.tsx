@@ -59,7 +59,7 @@ export default async function AdminDashboard() {
       ) : (
         <div className="overflow-hidden rounded-xl border border-border">
           <table className="w-full text-sm">
-            <thead className="bg-bg-surface text-text-muted">
+            <thead className="bg-gray-100 text-text-muted">
               <tr>
                 <th className="px-4 py-3 text-left">Type</th>
                 <th className="px-4 py-3 text-left">Status</th>
@@ -114,7 +114,7 @@ function StatCard({
   sub?: string;
 }) {
   return (
-    <div className="rounded-xl border border-border bg-bg-card p-5">
+    <div className="rounded-xl border border-border bg-white p-5">
       <div className="mb-2 flex items-center gap-2 text-text-muted">
         {icon}
         <span className="text-sm">{label}</span>

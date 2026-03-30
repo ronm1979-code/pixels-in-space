@@ -1,6 +1,6 @@
-export const SITE_NAME = "GamePulse";
+export const SITE_NAME = "Pixels in Space";
 export const SITE_DESCRIPTION =
-  "Your automated source for the latest gaming news, reviews, and game information.";
+  "Breaking gaming news, expert reviews, and in-depth coverage of the biggest games.";
 
 export const CATEGORIES = [
   "news",

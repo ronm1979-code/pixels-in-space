@@ -31,7 +31,7 @@ export async function collectSteamNews(
     try {
       const res = await fetch(
         `${newsUrl}?appid=${appId}&count=5&maxlength=0&key=${key}`,
-        { headers: { "User-Agent": "GamePulse/1.0" } }
+        { headers: { "User-Agent": "PixelsInSpace/1.0" } }
       );
       if (!res.ok) continue;
 
@@ -62,7 +62,7 @@ export async function getSteamReviewScore(
   try {
     const res = await fetch(
       `https://store.steampowered.com/appreviews/${appId}?json=1&language=all&num_per_page=0`,
-      { headers: { "User-Agent": "GamePulse/1.0" } }
+      { headers: { "User-Agent": "PixelsInSpace/1.0" } }
     );
     if (!res.ok) return null;
 

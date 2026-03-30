@@ -15,7 +15,7 @@ export default function AdminLayout({
 }) {
   return (
     <div className="flex min-h-screen">
-      <aside className="w-64 border-r border-border bg-bg-surface p-4">
+      <aside className="w-64 border-r border-border bg-gray-100 p-4">
         <div className="mb-6">
           <Link
             href="/"
@@ -61,7 +61,7 @@ function SidebarLink({
   return (
     <Link
       href={href}
-      className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-text-secondary transition-colors hover:bg-bg-card hover:text-accent"
+      className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-text-secondary transition-colors hover:bg-white hover:text-accent"
     >
       {icon}
       {children}

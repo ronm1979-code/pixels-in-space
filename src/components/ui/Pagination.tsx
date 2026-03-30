@@ -15,11 +15,7 @@ export function Pagination({
 
   const pages: (number | "...")[] = [];
   for (let i = 1; i <= totalPages; i++) {
-    if (
-      i === 1 ||
-      i === totalPages ||
-      (i >= currentPage - 1 && i <= currentPage + 1)
-    ) {
+    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
       pages.push(i);
     } else if (pages[pages.length - 1] !== "...") {
       pages.push("...");
@@ -35,15 +31,9 @@ export function Pagination({
       )}
       {pages.map((page, i) =>
         page === "..." ? (
-          <span key={`dots-${i}`} className="px-2 text-text-muted">
-            ...
-          </span>
+          <span key={`dots-${i}`} className="px-2 text-text-muted">...</span>
         ) : (
-          <PageLink
-            key={page}
-            href={`${basePath}?page=${page}`}
-            active={page === currentPage}
-          >
+          <PageLink key={page} href={`${basePath}?page=${page}`} active={page === currentPage}>
             {page}
           </PageLink>
         )
@@ -57,23 +47,15 @@ export function Pagination({
   );
 }
 
-function PageLink({
-  href,
-  active,
-  children,
-}: {
-  href: string;
-  active?: boolean;
-  children: React.ReactNode;
-}) {
+function PageLink({ href, active, children }: { href: string; active?: boolean; children: React.ReactNode }) {
   return (
     <Link
       href={href}
       className={cn(
         "flex h-9 min-w-9 items-center justify-center rounded-lg px-3 text-sm font-medium transition-all",
         active
-          ? "border border-primary/50 bg-primary/10 text-primary-light"
-          : "border border-transparent bg-white/3 text-text-muted hover:bg-white/5 hover:text-text-secondary"
+          ? "bg-primary text-white shadow-sm"
+          : "border border-border bg-white text-text-muted hover:border-primary/30 hover:text-primary"
       )}
     >
       {children}
