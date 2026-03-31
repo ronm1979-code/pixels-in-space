@@ -52,7 +52,15 @@
       "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2957550/ss_7985dba8b78a98f81bb1f660a8c5e35d1e3839cc.1920x1080.jpg\")",
       "WebFetch(domain:steamdb.info)",
       "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2622380\")",
-      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=3240220\")"
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=3240220\")",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(where turso:*)",
+      "Bash(curl -sSfL https://get.tur.so/install.sh)",
+      "Bash(bash)",
+      "Bash(turso --version)",
+      "Bash(npx turso:*)",
+      "Bash(DATABASE_URL=\"libsql://pixels-in-space-ronm055.aws-eu-west-1.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" npx prisma db push)"
     ]
   }
 }
