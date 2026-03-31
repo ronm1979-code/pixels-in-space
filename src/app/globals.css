@@ -88,6 +88,16 @@ body {
   background: linear-gradient(90deg, #6c2bd9, #0891b2, #10b981);
 }
 
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
 /* ── Prose ── */
 .prose-game {
   line-height: 1.8;
