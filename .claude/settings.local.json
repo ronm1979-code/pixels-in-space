@@ -61,7 +61,19 @@
       "Bash(turso --version)",
       "Bash(npx turso:*)",
       "Bash(DATABASE_URL=\"libsql://pixels-in-space-ronm055.aws-eu-west-1.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" npx prisma db push)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "WebFetch(domain:pixels-in-space.vercel.app)",
+      "Bash(printf 'libsql://pixels-in-space-ronm055.aws-eu-west-1.turso.io')",
+      "Bash(printf 'eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ')",
+      "Bash(printf 'file:./prisma/dev.db')",
+      "Bash(PATH=\"/c/Program Files/nodejs:$PATH\" node -e \":*)",
+      "WebFetch(domain:gonintendo.com)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:www.animenewsnetwork.com)",
+      "Bash(PATH=\"/c/Program Files/nodejs:$PATH\" npx tsx scripts/update-content-2026-03-31.mts)",
+      "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/ss_702c9ed8dc25f26be07539cd5cfb9f08046d210a.1920x1080.jpg\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=3280350\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2852190\")"
     ]
   }
 }

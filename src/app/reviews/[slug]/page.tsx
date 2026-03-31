@@ -53,13 +53,14 @@ export default async function ReviewPage({
       <main className="mx-auto max-w-3xl px-4 py-8 lg:px-0">
         {/* Review header */}
         <div className="mb-8 flex gap-6">
-          <div className="relative h-44 w-32 flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
+          <div className="relative h-52 w-36 flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
             {review.game.coverImage ? (
               <Image
                 src={review.game.coverImage}
                 alt={review.game.title}
                 fill
                 className="object-cover"
+                sizes="144px"
               />
             ) : (
               <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
