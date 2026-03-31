@@ -44,9 +44,7 @@ export default async function HomePage() {
       createdAt: a.createdAt.toISOString(),
     }));
 
-  const gridArticles = latestArticles
-    .filter((a) => !carouselArticles.some((c) => c.slug === a.slug))
-    .slice(0, 6);
+  const gridArticles = latestArticles.slice(0, 9);
 
   return (
     <>
@@ -77,7 +75,7 @@ export default async function HomePage() {
         {/* More News */}
         {gridArticles.length > 0 && (
           <section className="mb-14">
-            <SectionHeader title="More News" href="/news" />
+            <SectionHeader title="Latest News" href="/news" />
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {gridArticles.map((article) => (
                 <NewsCard

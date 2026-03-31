@@ -59,7 +59,8 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
                 alt={a.title}
                 fill
                 className="object-cover"
-                sizes="(max-width: 1200px) 100vw, 1200px"
+                sizes="100vw"
+                quality={90}
                 priority={i === 0}
               />
             ) : (
