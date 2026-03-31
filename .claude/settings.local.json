@@ -73,7 +73,16 @@
       "Bash(PATH=\"/c/Program Files/nodejs:$PATH\" npx tsx scripts/update-content-2026-03-31.mts)",
       "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/ss_702c9ed8dc25f26be07539cd5cfb9f08046d210a.1920x1080.jpg\")",
       "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=3280350\")",
-      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2852190\")"
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2852190\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/storesearch/?term=Fatal+Frame+Crimson+Butterfly+Remake&l=english&cc=US\")",
+      "Bash(python3 -c \":*)",
+      "WebFetch(domain:www.rockstargames.com)",
+      "WebFetch(domain:media.rockstargames.com)",
+      "WebFetch(domain:gta.fandom.com)",
+      "WebFetch(domain:www.videogameschronicle.com)",
+      "Bash(curl -sI \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Epic_Games_logo_%282020%29.png/1200px-Epic_Games_logo_%282020%29.png\")",
+      "WebFetch(domain:1000logos.net)",
+      "Bash(curl -sI \"https://1000logos.net/wp-content/uploads/2021/12/Epic-Games-logo.png\")"
     ]
   }
 }
