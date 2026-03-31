@@ -8,10 +8,11 @@ function createPrismaClient() {
   const tursoUrl = process.env.TURSO_DATABASE_URL;
   const tursoToken = process.env.TURSO_AUTH_TOKEN;
 
-  // Use Turso in production, local SQLite in dev
   if (tursoUrl && tursoToken) {
-    const libsql = createClient({ url: tursoUrl, authToken: tursoToken });
-    const adapter = new PrismaLibSql(libsql);
+    const adapter = new PrismaLibSql({
+      url: tursoUrl,
+      authToken: tursoToken,
+    });
     return new PrismaClient({ adapter } as any);
   }
 
