@@ -6,6 +6,7 @@ import { parseJsonField, formatDate } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Comments } from "@/components/ui/Comments";
 import type { Metadata } from "next";
 import type { SourceReview } from "@/types";
 
@@ -141,6 +142,9 @@ export default async function ReviewPage({
           className="prose-game mb-10"
           dangerouslySetInnerHTML={{ __html: review.content }}
         />
+
+        {/* Comments */}
+        <Comments reviewId={review.id} />
 
         {/* Source scores */}
         {sourceReviews.length > 0 && (

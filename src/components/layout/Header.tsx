@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: "/news", label: "News" },
   { href: "/reviews", label: "Reviews" },
   { href: "/games", label: "Games" },
+  { href: "/mobile", label: "Mobile" },
 ];
 
 export function Header() {

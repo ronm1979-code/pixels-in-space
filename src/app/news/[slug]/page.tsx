@@ -6,6 +6,7 @@ import { formatDate } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Comments } from "@/components/ui/Comments";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -110,6 +111,9 @@ export default async function ArticlePage({
             </Link>
           </div>
         )}
+
+        {/* Comments */}
+        <Comments articleId={article.id} />
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
