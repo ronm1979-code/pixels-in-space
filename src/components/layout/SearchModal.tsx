@@ -82,13 +82,17 @@ export function SearchModal() {
       </button>
 
       {open && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
-          onMouseDown={(e) => {
-            if (e.target === e.currentTarget) setOpen(false);
-          }}
-        >
-          <div className="mx-auto mt-[15vh] w-full max-w-lg overflow-hidden rounded-2xl border border-border bg-white shadow-2xl">
+        <div className="fixed inset-0 z-[100]">
+          {/* Full-screen clickable backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onMouseDown={() => setOpen(false)}
+          />
+          {/* Modal - stops click propagation */}
+          <div
+            className="relative mx-auto mt-[15vh] w-full max-w-lg overflow-hidden rounded-2xl border border-border bg-white shadow-2xl"
+            onMouseDown={(e) => e.stopPropagation()}
+          >
             {/* Input */}
             <div className="flex items-center gap-3 border-b border-border px-4 py-3">
               <Search className="h-5 w-5 text-text-muted" />
