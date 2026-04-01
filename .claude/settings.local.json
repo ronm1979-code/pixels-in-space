@@ -83,7 +83,9 @@
       "Bash(curl -sI \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Epic_Games_logo_%282020%29.png/1200px-Epic_Games_logo_%282020%29.png\")",
       "WebFetch(domain:1000logos.net)",
       "Bash(curl -sI \"https://1000logos.net/wp-content/uploads/2021/12/Epic-Games-logo.png\")",
-      "mcp__scheduled-tasks__list_scheduled_tasks"
+      "mcp__scheduled-tasks__list_scheduled_tasks",
+      "Bash(PATH=\"$PATH:/c/Program Files/nodejs\" npx tsx scripts/content-update-apr1.ts)",
+      "Bash(curl -sI \"https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg\")"
     ]
   }
 }
