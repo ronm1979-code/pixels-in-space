@@ -94,6 +94,12 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+@keyframes borderSpinOnce {
+  0% { transform: rotate(0deg); opacity: 1; }
+  80% { transform: rotate(360deg); opacity: 1; }
+  100% { transform: rotate(360deg); opacity: 0; }
+}
+
 .glow-card-green,
 .glow-card-red {
   position: relative;
@@ -116,7 +122,7 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  animation: borderSpin 3s linear infinite;
+  animation: borderSpinOnce 3s ease-out forwards;
 }
 
 .glow-card-green::before {
