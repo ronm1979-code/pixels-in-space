@@ -21,39 +21,41 @@ export function ReviewCard({
 }: ReviewCardProps) {
   return (
     <Link href={`/reviews/${slug}`} className="group block">
-      <article className="card-hover flex gap-4 rounded-xl border border-border bg-white p-4 shadow-sm">
-        <div className="relative h-32 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+      <article className="card-hover overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+        {/* Landscape image on top */}
+        <div className="relative aspect-[16/7] overflow-hidden bg-gray-100">
           {gameCoverImage ? (
             <Image
               src={gameCoverImage}
               alt={gameTitle}
               fill
-              className="object-cover"
-              sizes="96px"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={85}
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center gradient-hero text-xs text-text-muted">
-              N/A
+            <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
+              No Image
             </div>
           )}
-        </div>
-        <div className="flex flex-1 flex-col justify-between py-0.5">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
-              Review
-            </p>
-            <h3 className="mt-0.5 line-clamp-1 font-semibold transition-colors group-hover:text-primary">
-              {gameTitle}
-            </h3>
+          <div className="absolute right-3 top-3">
+            <ScoreBadge score={score} size="md" />
           </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </div>
+        {/* Text below */}
+        <div className="p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+            Review
+          </p>
+          <h3 className="mt-0.5 line-clamp-1 text-lg font-semibold transition-colors group-hover:text-primary">
+            {gameTitle}
+          </h3>
           {verdict && (
-            <p className="line-clamp-2 text-sm leading-relaxed text-text-muted">
+            <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-text-muted">
               {verdict}
             </p>
           )}
-        </div>
-        <div className="flex flex-shrink-0 items-center">
-          <ScoreBadge score={score} size="md" />
         </div>
       </article>
     </Link>
