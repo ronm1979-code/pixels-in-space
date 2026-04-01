@@ -46,7 +46,7 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
       onMouseLeave={() => setPaused(false)}
     >
       {/* Background image */}
-      <div className="relative aspect-[21/9] min-h-[350px] bg-gray-900 md:min-h-[450px]">
+      <div className="relative aspect-[4/3] bg-gray-900 sm:aspect-[21/9] sm:min-h-[450px]">
         {articles.map((a, i) => (
           <div
             key={a.slug}
@@ -73,7 +73,7 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
 
         {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-10">
           <div
             key={article.slug}
             className="animate-fadeIn"
@@ -81,11 +81,11 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
             <Badge variant={article.category} className="mb-3">
               {article.category}
             </Badge>
-            <h2 className="mb-2 max-w-3xl text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
+            <h2 className="mb-2 max-w-3xl text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl lg:text-4xl">
               {article.title}
             </h2>
             {article.summary && (
-              <p className="mb-3 line-clamp-2 max-w-2xl text-sm text-white/70 md:text-base">
+              <p className="mb-3 hidden max-w-2xl text-sm text-white/70 sm:line-clamp-2 md:text-base">
                 {article.summary}
               </p>
             )}
