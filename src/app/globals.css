@@ -89,44 +89,52 @@ body {
 }
 
 /* ── Animated border cards ── */
-@keyframes borderFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes borderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.glow-card-green {
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-}
-
-.glow-card-green::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(270deg, #10b981, #34d399, #6ee7b7, #34d399, #10b981);
-  background-size: 300% 300%;
-  animation: borderFlow 4s ease infinite;
-  z-index: -1;
-}
-
+.glow-card-green,
 .glow-card-red {
-  border: 2px solid transparent;
-  background-clip: padding-box;
   position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 2px;
 }
 
+.glow-card-green > *,
+.glow-card-red > * {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-card-green::before,
 .glow-card-red::before {
   content: "";
   position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(270deg, #ef4444, #f87171, #fca5a5, #f87171, #ef4444);
-  background-size: 300% 300%;
-  animation: borderFlow 4s ease infinite;
-  z-index: -1;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  animation: borderSpin 3s linear infinite;
+}
+
+.glow-card-green::before {
+  background: conic-gradient(from 0deg, transparent 0%, #10b981 25%, transparent 50%, #34d399 75%, transparent 100%);
+}
+
+.glow-card-red::before {
+  background: conic-gradient(from 0deg, transparent 0%, #ef4444 25%, transparent 50%, #f87171 75%, transparent 100%);
+}
+
+.glow-card-green::after,
+.glow-card-red::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: white;
+  z-index: 0;
 }
 
 /* ── Animations ── */

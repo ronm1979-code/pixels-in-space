@@ -104,29 +104,33 @@ export default async function ReviewPage({
         {(pros.length > 0 || cons.length > 0) && (
           <div className="mb-10 grid gap-5 md:grid-cols-2">
             {pros.length > 0 && (
-              <div className="glow-card-green relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm">
-                <h3 className="mb-4 text-lg font-bold text-emerald-600">Pros</h3>
-                <ul className="space-y-3">
-                  {pros.map((pro, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm">
-                      <span className="mt-0.5 text-emerald-400">&bull;</span>
-                      <span className="text-text-secondary">{pro}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="glow-card-green">
+                <div className="relative z-10 rounded-[14px] bg-white p-6">
+                  <h3 className="mb-4 text-lg font-bold text-emerald-600">Pros</h3>
+                  <ul className="space-y-3">
+                    {pros.map((pro, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <span className="mt-0.5 text-emerald-400">&bull;</span>
+                        <span className="text-text-secondary">{pro}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )}
             {cons.length > 0 && (
-              <div className="glow-card-red relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm">
-                <h3 className="mb-4 text-lg font-bold text-red-500">Cons</h3>
-                <ul className="space-y-3">
-                  {cons.map((con, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm">
-                      <span className="mt-0.5 text-red-400">&bull;</span>
-                      <span className="text-text-secondary">{con}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="glow-card-red">
+                <div className="relative z-10 rounded-[14px] bg-white p-6">
+                  <h3 className="mb-4 text-lg font-bold text-red-500">Cons</h3>
+                  <ul className="space-y-3">
+                    {cons.map((con, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <span className="mt-0.5 text-red-400">&bull;</span>
+                        <span className="text-text-secondary">{con}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )}
           </div>
