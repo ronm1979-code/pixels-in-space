@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "1000logos.net" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "gmedia.playstation.com" },
+      { protocol: "https", hostname: "blog.playstation.com" },
     ],
   },
 };
