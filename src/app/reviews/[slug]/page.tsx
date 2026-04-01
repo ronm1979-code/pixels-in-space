@@ -52,50 +52,57 @@ export default async function ReviewPage({
       <Header />
       <main className="mx-auto max-w-3xl px-4 py-8 lg:px-0">
         {/* Review header */}
-        <div className="mb-8 flex gap-6">
-          <div className="relative h-52 w-36 flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
-            {review.game.coverImage ? (
-              <Image
-                src={review.game.coverImage}
-                alt={review.game.title}
-                fill
-                className="object-cover"
-                sizes="144px"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
-                N/A
-              </div>
-            )}
-          </div>
-          <div className="flex flex-1 flex-col justify-between">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
-                Review
-              </p>
-              <h1 className="mt-1 text-2xl font-bold md:text-3xl">
-                {review.game.title}
-              </h1>
-              {review.verdict && (
-                <p className="mt-3 text-lg italic leading-relaxed text-text-secondary">
-                  &ldquo;{review.verdict}&rdquo;
-                </p>
+        <div className="mb-8">
+          {/* Mobile: stacked layout */}
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+            <div className="relative mx-auto h-48 w-full max-w-xs overflow-hidden rounded-xl bg-gray-100 sm:mx-0 sm:h-52 sm:w-36 sm:flex-shrink-0">
+              {review.game.coverImage ? (
+                <Image
+                  src={review.game.coverImage}
+                  alt={review.game.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 144px"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
+                  N/A
+                </div>
               )}
             </div>
-            <div className="flex items-center gap-4">
-              <Link
-                href={`/games/${review.game.slug}`}
-                className="text-sm text-text-muted hover:text-primary"
-              >
-                View game page
-              </Link>
-              <span className="text-sm text-text-muted">
-                {formatDate(review.publishedAt ?? review.createdAt)}
-              </span>
+            <div className="flex flex-1 flex-col justify-between">
+              <div>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                      Review
+                    </p>
+                    <h1 className="mt-1 text-2xl font-bold md:text-3xl">
+                      {review.game.title}
+                    </h1>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <ScoreBadge score={review.score} size="lg" />
+                  </div>
+                </div>
+                {review.verdict && (
+                  <p className="mt-3 text-base italic leading-relaxed text-text-secondary sm:text-lg">
+                    &ldquo;{review.verdict}&rdquo;
+                  </p>
+                )}
+              </div>
+              <div className="mt-3 flex items-center gap-4">
+                <Link
+                  href={`/games/${review.game.slug}`}
+                  className="text-sm text-text-muted hover:text-primary"
+                >
+                  View game page
+                </Link>
+                <span className="text-sm text-text-muted">
+                  {formatDate(review.publishedAt ?? review.createdAt)}
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-shrink-0 items-start">
-            <ScoreBadge score={review.score} size="lg" />
           </div>
         </div>
 

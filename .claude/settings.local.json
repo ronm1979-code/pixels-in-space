@@ -104,7 +104,9 @@
       "WebFetch(domain:80.lv)",
       "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2416450\")",
       "Bash(PATH=\"/c/Program Files/nodejs:$PATH\" npx tsx scripts/add-content-2026-04-01.ts)",
-      "Bash(1 done:*)"
+      "Bash(1 done:*)",
+      "WebFetch(domain:www.serebii.net)",
+      "Bash(curl -sI \"https://www.serebii.net/legendsz-a/181.jpg\")"
     ]
   }
 }
