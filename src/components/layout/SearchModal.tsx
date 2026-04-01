@@ -82,12 +82,13 @@ export function SearchModal() {
       </button>
 
       {open && (
-        <div
-          className="fixed inset-0 z-[100] flex items-start justify-center bg-black/40 backdrop-blur-sm pt-[15vh]"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setOpen(false);
-          }}
-        >
+        <div className="fixed inset-0 z-[100]">
+          {/* Clickable backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
+          <div className="relative flex items-start justify-center pt-[15vh]">
           <div className="w-full max-w-lg overflow-hidden rounded-2xl border border-border bg-white shadow-2xl">
             {/* Input */}
             <div className="flex items-center gap-3 border-b border-border px-4 py-3">
@@ -240,6 +241,7 @@ export function SearchModal() {
                 </div>
               )}
             </div>
+          </div>
           </div>
         </div>
       )}
