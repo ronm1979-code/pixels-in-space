@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ThumbsUp, ThumbsDown } from "lucide-react";
+import { Check, X } from "lucide-react";
 import type { SourceReview } from "@/types";
 
 export async function generateMetadata({
@@ -108,17 +108,15 @@ export default async function ReviewPage({
               {pros.length > 0 && (
                 <div className="p-6 md:border-r md:border-border">
                   <div className="mb-4 flex items-center gap-2.5">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 text-white">
-                      <ThumbsUp className="h-4 w-4" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm">
+                      <Check className="h-4 w-4" strokeWidth={3} />
                     </div>
                     <h3 className="text-lg font-bold text-text-primary">Pros</h3>
                   </div>
                   <ul className="space-y-3">
                     {pros.map((pro, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm">
-                        <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-600">
-                          {i + 1}
-                        </span>
+                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500" strokeWidth={3} />
                         <span className="text-text-secondary">{pro}</span>
                       </li>
                     ))}
@@ -128,17 +126,15 @@ export default async function ReviewPage({
               {cons.length > 0 && (
                 <div className="border-t border-border p-6 md:border-t-0">
                   <div className="mb-4 flex items-center gap-2.5">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500 text-white">
-                      <ThumbsDown className="h-4 w-4" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white shadow-sm">
+                      <X className="h-4 w-4" strokeWidth={3} />
                     </div>
                     <h3 className="text-lg font-bold text-text-primary">Cons</h3>
                   </div>
                   <ul className="space-y-3">
                     {cons.map((con, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm">
-                        <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-600">
-                          {i + 1}
-                        </span>
+                        <X className="mt-0.5 h-4 w-4 flex-shrink-0 text-red-500" strokeWidth={3} />
                         <span className="text-text-secondary">{con}</span>
                       </li>
                     ))}
