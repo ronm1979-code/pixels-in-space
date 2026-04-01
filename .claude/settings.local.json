@@ -102,7 +102,8 @@
       "WebFetch(domain:www.turtlebeach.com)",
       "WebFetch(domain:www.engadget.com)",
       "WebFetch(domain:80.lv)",
-      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2416450\")"
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2416450\")",
+      "Bash(PATH=\"/c/Program Files/nodejs:$PATH\" npx tsx scripts/add-content-2026-04-01.ts)"
     ]
   }
 }

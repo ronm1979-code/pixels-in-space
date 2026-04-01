@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Rocket, Search } from "lucide-react";
+import { Rocket } from "lucide-react";
+import { SearchModal } from "./SearchModal";
 
 const NAV_LINKS = [
   { href: "/news", label: "News" },
@@ -34,9 +35,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <button className="flex h-9 w-9 items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-black/5 hover:text-text-primary">
-            <Search className="h-4 w-4" />
-          </button>
+          <SearchModal />
           <button className="flex h-9 items-center gap-1.5 rounded-lg bg-black/5 px-3 text-sm font-medium text-text-secondary md:hidden">
             <span className="flex flex-col gap-1">
               <span className="h-0.5 w-4 rounded bg-text-secondary" />
