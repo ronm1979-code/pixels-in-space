@@ -30,10 +30,22 @@ export default async function HomePage() {
     }),
   ]);
 
-  // Articles with images go to carousel, rest below
-  const carouselArticles = latestArticles
+  // Mix articles and reviews for carousel, sorted by date
+  const reviewCarouselItems = latestReviews
+    .filter((r) => r.game.coverImage)
+    .map((r) => ({
+      slug: r.slug,
+      title: `${r.game.title} Review — ${r.verdict ?? ""}`.slice(0, 100),
+      summary: r.verdict,
+      imageUrl: r.game.coverImage,
+      category: "review",
+      publishedAt: r.publishedAt?.toISOString() ?? null,
+      createdAt: r.createdAt.toISOString(),
+      isReview: true,
+    }));
+
+  const articleCarouselItems = latestArticles
     .filter((a) => a.imageUrl)
-    .slice(0, 5)
     .map((a) => ({
       slug: a.slug,
       title: a.title,
@@ -42,7 +54,12 @@ export default async function HomePage() {
       category: a.category,
       publishedAt: a.publishedAt?.toISOString() ?? null,
       createdAt: a.createdAt.toISOString(),
+      isReview: false,
     }));
+
+  const carouselArticles = [...articleCarouselItems, ...reviewCarouselItems]
+    .sort((a, b) => new Date(b.publishedAt ?? b.createdAt).getTime() - new Date(a.publishedAt ?? a.createdAt).getTime())
+    .slice(0, 6);
 
   const gridArticles = latestArticles.slice(0, 9);
 

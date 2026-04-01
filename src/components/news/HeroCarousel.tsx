@@ -15,6 +15,7 @@ interface HeroArticle {
   category: string;
   publishedAt: string | null;
   createdAt: string;
+  isReview?: boolean;
 }
 
 export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
@@ -94,7 +95,7 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
                 {timeAgo(article.publishedAt ?? article.createdAt)}
               </span>
               <Link
-                href={`/news/${article.slug}`}
+                href={article.isReview ? `/reviews/${article.slug}` : `/news/${article.slug}`}
                 className="rounded-lg bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/25"
               >
                 Read More

@@ -106,7 +106,14 @@
       "Bash(PATH=\"/c/Program Files/nodejs:$PATH\" npx tsx scripts/add-content-2026-04-01.ts)",
       "Bash(1 done:*)",
       "WebFetch(domain:www.serebii.net)",
-      "Bash(curl -sI \"https://www.serebii.net/legendsz-a/181.jpg\")"
+      "Bash(curl -sI \"https://www.serebii.net/legendsz-a/181.jpg\")",
+      "Bash(PATH=\"$PATH:/c/Program Files/nodejs\" node scripts/content-update-apr2026.mjs)",
+      "Bash(PATH=\"$PATH:/c/Program Files/nodejs\" node scripts/check-db.mjs)",
+      "Bash(PATH=\"$PATH:/c/Program Files/nodejs\" node -e \":*)",
+      "Bash(curl -sI \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2353060\")",
+      "Bash(for appid:*)",
+      "Bash(do echo:*)"
     ]
   }
 }
