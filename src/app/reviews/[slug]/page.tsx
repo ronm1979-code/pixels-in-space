@@ -103,37 +103,49 @@ export default async function ReviewPage({
 
         {/* Pros and Cons */}
         {(pros.length > 0 || cons.length > 0) && (
-          <div className="mb-10 grid gap-4 md:grid-cols-2">
-            {pros.length > 0 && (
-              <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
-                <h3 className="mb-3 flex items-center gap-2 font-semibold text-emerald-600">
-                  <ThumbsUp className="h-4 w-4" /> What Works
-                </h3>
-                <ul className="space-y-2">
-                  {pros.map((pro, i) => (
-                    <li key={i} className="flex gap-2 text-sm text-text-secondary">
-                      <span className="mt-0.5 text-emerald-600">+</span>
-                      {pro}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {cons.length > 0 && (
-              <div className="rounded-xl border border-red-200 bg-red-50 p-5">
-                <h3 className="mb-3 flex items-center gap-2 font-semibold text-red-600">
-                  <ThumbsDown className="h-4 w-4" /> What Doesn&apos;t
-                </h3>
-                <ul className="space-y-2">
-                  {cons.map((con, i) => (
-                    <li key={i} className="flex gap-2 text-sm text-text-secondary">
-                      <span className="mt-0.5 text-red-600">&minus;</span>
-                      {con}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          <div className="mb-10 overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            <div className="grid md:grid-cols-2">
+              {pros.length > 0 && (
+                <div className="p-6 md:border-r md:border-border">
+                  <div className="mb-4 flex items-center gap-2.5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 text-white">
+                      <ThumbsUp className="h-4 w-4" />
+                    </div>
+                    <h3 className="text-lg font-bold text-text-primary">Pros</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    {pros.map((pro, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-600">
+                          {i + 1}
+                        </span>
+                        <span className="text-text-secondary">{pro}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {cons.length > 0 && (
+                <div className="border-t border-border p-6 md:border-t-0">
+                  <div className="mb-4 flex items-center gap-2.5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500 text-white">
+                      <ThumbsDown className="h-4 w-4" />
+                    </div>
+                    <h3 className="text-lg font-bold text-text-primary">Cons</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    {cons.map((con, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-600">
+                          {i + 1}
+                        </span>
+                        <span className="text-text-secondary">{con}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         )}
 

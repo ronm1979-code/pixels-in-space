@@ -87,7 +87,22 @@
       "Bash(PATH=\"$PATH:/c/Program Files/nodejs\" npx tsx scripts/content-update-apr1.ts)",
       "Bash(curl -sI \"https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg\")",
       "WebFetch(domain:www.playstation.com)",
-      "WebFetch(domain:blog.playstation.com)"
+      "WebFetch(domain:blog.playstation.com)",
+      "WebFetch(domain:deltiasgaming.com)",
+      "WebFetch(domain:finalweapon.net)",
+      "WebFetch(domain:www.gamespot.com)",
+      "WebFetch(domain:gamingtrend.com)",
+      "WebFetch(domain:rokthereaper.com)",
+      "WebFetch(domain:www.vgcal.com)",
+      "WebFetch(domain:rpgamer.com)",
+      "WebFetch(domain:www.nintendolife.com)",
+      "WebFetch(domain:massivelyop.com)",
+      "WebFetch(domain:www.facebook.com)",
+      "WebFetch(domain:vulkk.com)",
+      "WebFetch(domain:www.turtlebeach.com)",
+      "WebFetch(domain:www.engadget.com)",
+      "WebFetch(domain:80.lv)",
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2416450\")"
     ]
   }
 }
