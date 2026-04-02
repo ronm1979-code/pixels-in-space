@@ -133,7 +133,11 @@
       "Bash(npm ls:*)",
       "Bash(curl -sI \"https://pixels-in-space.vercel.app/games\")",
       "Bash(curl -sI \"https://pixels-in-space.vercel.app/mobile\")",
-      "Bash(TURSO_DATABASE_URL=\"libsql://pixels-in-space-ronm055.aws-eu-west-1.turso.io\" TURSO_AUTH_TOKEN=\"eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" node -e \":*)"
+      "Bash(TURSO_DATABASE_URL=\"libsql://pixels-in-space-ronm055.aws-eu-west-1.turso.io\" TURSO_AUTH_TOKEN=\"eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" node -e \":*)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "Bash(curl -sI \"https://www.youtube.com/watch?v=W-cLiEFGEP4\")",
+      "WebFetch(domain:www.dexerto.com)",
+      "WebFetch(domain:fankit.supercell.com)"
     ]
   }
 }

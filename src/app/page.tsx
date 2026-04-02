@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const [latestArticles, latestReviews, trendingGames] = await Promise.all([
     prisma.article.findMany({
-      where: { status: "published" },
+      where: { status: "published", category: { not: "mobile" } },
       orderBy: { publishedAt: "desc" },
       take: 12,
     }),
