@@ -137,7 +137,9 @@
       "WebFetch(domain:en.wikipedia.org)",
       "Bash(curl -sI \"https://www.youtube.com/watch?v=W-cLiEFGEP4\")",
       "WebFetch(domain:www.dexerto.com)",
-      "WebFetch(domain:fankit.supercell.com)"
+      "WebFetch(domain:fankit.supercell.com)",
+      "WebFetch(domain:supercell.com)",
+      "WebFetch(domain:www.tynker.com)"
     ]
   }
 }

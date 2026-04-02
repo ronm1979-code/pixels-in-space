@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "store.steampowered.com" },
       { protocol: "https", hostname: "**.githubusercontent.com" },
       { protocol: "https", hostname: "media.rockstargames.com" },
+      { protocol: "https", hostname: "supercell.com" },
+      { protocol: "https", hostname: "images.tynker.com" },
       { protocol: "https", hostname: "www.videogameschronicle.com" },
       { protocol: "https", hostname: "1000logos.net" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
