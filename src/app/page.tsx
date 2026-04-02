@@ -8,7 +8,7 @@ import { GameCard } from "@/components/games/GameCard";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const [latestArticles, latestReviews, trendingGames] = await Promise.all([
