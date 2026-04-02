@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Breaking gaming news, announcements, and stories from across the industry.",
 };
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function NewsPage({
   searchParams,

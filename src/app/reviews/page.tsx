@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Reviews",
   description: "In-depth game reviews with honest scores and expert analysis.",
 };
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function ReviewsPage({
   searchParams,

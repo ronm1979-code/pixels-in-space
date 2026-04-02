@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "The latest mobile gaming news, trending games, and coverage for iOS and Android.",
 };
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function MobilePage({
   searchParams,

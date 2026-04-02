@@ -121,7 +121,9 @@
       "Bash(curl -sI \"https://pixels-in-space.vercel.app/news/pragmata-capcom-launches-april-17-2026\")",
       "Bash(curl -s \"https://store.steampowered.com/api/storesearch/?term=EA+Sports+FC&l=english&cc=US\")",
       "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=3405690\")",
-      "Bash(curl -sI \"https://pixels-in-space.vercel.app/reviews\")"
+      "Bash(curl -sI \"https://pixels-in-space.vercel.app/reviews\")",
+      "Bash(curl -s \"https://pixels-in-space.vercel.app/api/pipeline/status\")",
+      "Bash(curl -s \"https://pixels-in-space.vercel.app/reviews\")"
     ]
   }
 }
