@@ -113,7 +113,11 @@
       "Bash(curl -sI \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io\")",
       "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=2353060\")",
       "Bash(for appid:*)",
-      "Bash(do echo:*)"
+      "Bash(do echo:*)",
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=1622010\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=1716740\")",
+      "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/669119c3747653f41a46c59f213168448d094e04/ss_669119c3747653f41a46c59f213168448d094e04.1920x1080.jpg?t=1774868383\")",
+      "Bash(printf 'https://pixels-in-space.vercel.app')"
     ]
   }
 }

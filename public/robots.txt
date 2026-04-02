@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pixels-in-space.vercel.app/sitemap.xml

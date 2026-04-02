@@ -47,8 +47,35 @@ export default async function ReviewPage({
     []
   );
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    name: review.title,
+    reviewBody: review.verdict,
+    itemReviewed: {
+      "@type": "VideoGame",
+      name: review.game.title,
+      image: review.game.coverImage ?? undefined,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.score,
+      bestRating: 100,
+      worstRating: 0,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Pixels in Space",
+    },
+    datePublished: (review.publishedAt ?? review.createdAt).toISOString(),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="mx-auto max-w-3xl px-4 py-8 lg:px-0">
         {/* Review header */}

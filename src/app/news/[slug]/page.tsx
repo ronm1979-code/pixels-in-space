@@ -54,8 +54,27 @@ export default async function ArticlePage({
     take: 4,
   });
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: article.title,
+    description: article.summary,
+    image: article.imageUrl ?? undefined,
+    datePublished: (article.publishedAt ?? article.createdAt).toISOString(),
+    dateModified: article.updatedAt.toISOString(),
+    publisher: {
+      "@type": "Organization",
+      name: "Pixels in Space",
+      url: process.env.NEXT_PUBLIC_SITE_URL,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="mx-auto max-w-3xl px-4 py-8 lg:px-0">
         {/* Article header */}
