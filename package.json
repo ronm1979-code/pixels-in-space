@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
-    "@libsql/client": "^0.17.2",
+    "@libsql/client": "^0.8.1",
     "@prisma/adapter-libsql": "^6.19.3",
     "@prisma/client": "^6.19.2",
     "@vercel/analytics": "^2.0.1",
