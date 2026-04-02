@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "gmedia.playstation.com" },
       { protocol: "https", hostname: "blog.playstation.com" },
       { protocol: "https", hostname: "www.serebii.net" },
+      { protocol: "https", hostname: "monstervine.com" },
     ],
   },
 };
