@@ -128,7 +128,9 @@
       "Bash(curl -s \"https://pixels-in-space.vercel.app/api/search?q=hades\")",
       "Bash(curl -s \"https://pixels-in-space-dp39xgs6e-ronm055s-projects.vercel.app/\")",
       "Bash(curl -sI \"https://pixels-in-space-dp39xgs6e-ronm055s-projects.vercel.app/\")",
-      "Bash(curl -sI \"https://pixels-in-space.vercel.app/admin\")"
+      "Bash(curl -sI \"https://pixels-in-space.vercel.app/admin\")",
+      "Bash(curl -sI \"https://pixels-in-space.vercel.app/news\")",
+      "Bash(npm ls:*)"
     ]
   }
 }
