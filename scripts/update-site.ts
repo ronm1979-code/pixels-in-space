@@ -124,7 +124,7 @@ async function fetchRssFeed(url: string): Promise<FeedItem[]> {
       const title = item.match(/<title><!\[CDATA\[(.*?)\]\]>|<title>(.*?)<\/title>/)?.[1] || item.match(/<title>(.*?)<\/title>/)?.[1] || "";
       const link = item.match(/<link>(.*?)<\/link>/)?.[1] || "";
       const pubDate = item.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] || "";
-      const content = item.match(/<description><!\[CDATA\[(.*?)\]\]>|<description>(.*?)<\/description>/s)?.[1] || "";
+      const content = item.match(/<description><!\[CDATA\[([\s\S]*?)\]\]>|<description>([\s\S]*?)<\/description>/)?.[1] || "";
 
       if (title && link) {
         items.push({ title: title.trim(), link: link.trim(), pubDate, content });
@@ -240,13 +240,14 @@ async function collectAndPublish() {
 
       if (cleanContent.length < 50) continue;
 
-      // Try to find a game name and get its screenshot
+      // Try multiple approaches to find an image
       let imageUrl: string | null = null;
 
-      // Extract potential game name from title
-      const titleWords = item.title.split(/[:\-–—|]/).map((s) => s.trim());
-      if (titleWords[0]) {
-        const appId = await findSteamAppId(titleWords[0]);
+      // Try each segment of the title as a potential game name
+      const titleSegments = item.title.split(/[:\-–—|,]/).map((s) => s.trim()).filter(s => s.length > 3);
+      for (const segment of titleSegments) {
+        if (imageUrl) break;
+        const appId = await findSteamAppId(segment);
         if (appId) {
           const media = await getSteamMedia(appId);
           if (media && media.screenshots.length > 0) {
@@ -256,6 +257,21 @@ async function collectAndPublish() {
             }
           }
         }
+      }
+
+      // Also try extracting image from RSS content (many feeds include images)
+      if (!imageUrl) {
+        const imgMatch = item.content.match(/src=["']([^"']+\.(jpg|jpeg|png|webp))[^"']*/i);
+        if (imgMatch?.[1]) {
+          const verified = await verifyUrl(imgMatch[1]);
+          if (verified) imageUrl = imgMatch[1];
+        }
+      }
+
+      // RULE: No image = no article. Skip it.
+      if (!imageUrl) {
+        console.log(`  Skip (no image): ${item.title.slice(0, 60)}`);
+        continue;
       }
 
       const htmlContent = `<p>${cleanContent}</p>`;

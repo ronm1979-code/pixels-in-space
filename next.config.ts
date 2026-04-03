@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "blog.playstation.com" },
       { protocol: "https", hostname: "www.serebii.net" },
       { protocol: "https", hostname: "monstervine.com" },
+      { protocol: "https", hostname: "assetsio.gnwcdn.com" },
     ],
   },
 };

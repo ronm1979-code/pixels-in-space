@@ -146,7 +146,11 @@
       "WebFetch(domain:monstervine.com)",
       "Bash(curl -sI \"https://monstervine.com/wp-content/uploads/2026/02/NTE-Neverness-to-Everness-screenshot-3.jpg\")",
       "WebFetch(domain:www.nintendoreporters.com)",
-      "Bash(curl -sI \"https://www.serebii.net/pokemonchampions/1.jpg\")"
+      "Bash(curl -sI \"https://www.serebii.net/pokemonchampions/1.jpg\")",
+      "Skill(schedule)",
+      "Skill(schedule:*)",
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d \"{\"\"requests\"\":[{\"\"type\"\":\"\"execute\"\",\"\"stmt\"\":{\"\"sql\"\":\"\"SELECT slug, title, imageUrl FROM Article ORDER BY publishedAt DESC LIMIT 8\"\"}}]}\")",
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d \"{\"\"requests\"\":[{\"\"type\"\":\"\"execute\"\",\"\"stmt\"\":{\"\"sql\"\":\"\"SELECT slug, imageUrl FROM Article ORDER BY publishedAt DESC LIMIT 6\"\"}}]}\")"
     ]
   }
 }
