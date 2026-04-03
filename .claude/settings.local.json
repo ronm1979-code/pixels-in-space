@@ -144,7 +144,9 @@
       "Bash(curl -sI \"https://pixels-in-space.vercel.app/reviews/pokemon-legends-z-a-review\")",
       "Bash(curl -s \"https://store.steampowered.com/api/storesearch/?term=Neverness+to+Everness&l=english&cc=US\")",
       "WebFetch(domain:monstervine.com)",
-      "Bash(curl -sI \"https://monstervine.com/wp-content/uploads/2026/02/NTE-Neverness-to-Everness-screenshot-3.jpg\")"
+      "Bash(curl -sI \"https://monstervine.com/wp-content/uploads/2026/02/NTE-Neverness-to-Everness-screenshot-3.jpg\")",
+      "WebFetch(domain:www.nintendoreporters.com)",
+      "Bash(curl -sI \"https://www.serebii.net/pokemonchampions/1.jpg\")"
     ]
   }
 }
