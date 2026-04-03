@@ -202,4 +202,6 @@ body {
 .prose-game img {
   border-radius: 12px;
   margin: 1.5rem 0;
+  width: 100%;
+  height: auto;
 }
