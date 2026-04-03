@@ -160,7 +160,12 @@
       "WebFetch(domain:pixels-in-space-ronm055.aws-eu-west-1.turso.io)",
       "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d '{\"\"requests\"\":[{\"\"type\"\":\"\"execute\"\",\"\"stmt\"\":{\"\"sql\"\":\"\"SELECT slug, title FROM Article ORDER BY publishedAt DESC LIMIT 20\"\"}}]}')",
       "WebFetch(domain:shared.akamai.steamstatic.com)",
-      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d '{:*)"
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d '{:*)",
+      "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/702c9ed8dc25f26be07539cd5cfb9f08046d210a/ss_702c9ed8dc25f26be07539cd5cfb9f08046d210a.1920x1080.jpg?t=1774022345\")",
+      "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/dc15199b7f71ce4279be8002e9e5c508ecde83bc/ss_dc15199b7f71ce4279be8002e9e5c508ecde83bc.1920x1080.jpg?t=1774022345\")",
+      "Bash(curl -sI \"https://www.serebii.net/tomodachilife/\")",
+      "Bash(curl -sI \"https://www.gematsu.com/wp-content/uploads/2025/03/Tomodachi-Life-Living-the-Dream_2025_03-27-25_001.jpg\")",
+      "Bash(curl -sI \"https://pixels-in-space.vercel.app/news?page=5\")"
     ]
   }
 }
