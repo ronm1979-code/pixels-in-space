@@ -157,7 +157,10 @@
       "WebFetch(domain:www.windowscentral.com)",
       "WebFetch(domain:www.rpgsite.net)",
       "Bash(curl -s \"https://www.youtube.com/results?search_query=Hades+II+v1.0+Launch+Trailer+Supergiant\")",
-      "WebFetch(domain:pixels-in-space-ronm055.aws-eu-west-1.turso.io)"
+      "WebFetch(domain:pixels-in-space-ronm055.aws-eu-west-1.turso.io)",
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d '{\"\"requests\"\":[{\"\"type\"\":\"\"execute\"\",\"\"stmt\"\":{\"\"sql\"\":\"\"SELECT slug, title FROM Article ORDER BY publishedAt DESC LIMIT 20\"\"}}]}')",
+      "WebFetch(domain:shared.akamai.steamstatic.com)",
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d '{:*)"
     ]
   }
 }
