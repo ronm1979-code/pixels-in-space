@@ -1,0 +1,26 @@
+name: Update Site Content
+
+on:
+  schedule:
+    - cron: '0 */5 * * *'  # Every 5 hours
+  workflow_dispatch: {}      # Manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run content update
+        env:
+          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+          DATABASE_URL: "file:./prisma/dev.db"
+        run: npx tsx scripts/update-site.ts
