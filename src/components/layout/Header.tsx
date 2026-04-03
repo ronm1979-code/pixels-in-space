@@ -29,7 +29,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-4 py-2 text-sm font-medium text-text-secondary transition-all hover:bg-primary/5 hover:text-primary"
+              className="rounded-lg px-4 py-2 font-[family-name:var(--font-gaming)] text-xs font-semibold uppercase tracking-wider text-text-secondary transition-all hover:bg-primary/5 hover:text-primary"
             >
               {link.label}
             </Link>

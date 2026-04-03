@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Orbitron } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+
+const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-gaming" });
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-bg-body text-text-primary antialiased">
+      <body className={`min-h-screen bg-bg-body text-text-primary antialiased ${orbitron.variable}`}>
         {children}
         <Analytics />
       </body>
