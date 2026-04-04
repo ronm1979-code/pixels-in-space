@@ -66,8 +66,8 @@ export function NewsCard({
   }
 
   return (
-    <Link href={`/news/${slug}`} className="group block">
-      <article className="card-hover overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+    <Link href={`/news/${slug}`} className="group block h-full">
+      <article className="card-hover flex h-full flex-col overflow-hidden rounded-xl border border-border bg-white shadow-sm">
         <div className="relative aspect-video overflow-hidden bg-gray-100">
           {imageUrl ? (
             <Image
@@ -81,7 +81,7 @@ export function NewsCard({
             <div className="h-full w-full gradient-hero" />
           )}
         </div>
-        <div className="p-5">
+        <div className="flex flex-1 flex-col p-5">
           <div className="mb-3 flex items-center gap-2">
             <Badge variant={category}>{category}</Badge>
             <span className="text-[11px] text-text-muted">
@@ -92,7 +92,7 @@ export function NewsCard({
             {title}
           </h3>
           {summary && (
-            <p className="line-clamp-2 text-sm leading-relaxed text-text-muted">
+            <p className="mt-auto line-clamp-2 text-sm leading-relaxed text-text-muted">
               {summary}
             </p>
           )}
