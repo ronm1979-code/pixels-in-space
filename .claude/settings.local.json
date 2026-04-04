@@ -165,7 +165,27 @@
       "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/dc15199b7f71ce4279be8002e9e5c508ecde83bc/ss_dc15199b7f71ce4279be8002e9e5c508ecde83bc.1920x1080.jpg?t=1774022345\")",
       "Bash(curl -sI \"https://www.serebii.net/tomodachilife/\")",
       "Bash(curl -sI \"https://www.gematsu.com/wp-content/uploads/2025/03/Tomodachi-Life-Living-the-Dream_2025_03-27-25_001.jpg\")",
-      "Bash(curl -sI \"https://pixels-in-space.vercel.app/news?page=5\")"
+      "Bash(curl -sI \"https://pixels-in-space.vercel.app/news?page=5\")",
+      "Bash(curl -sI \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2769870/6d55864867bdea7c13e0076dec17cfa1e4dce13c/ss_6d55864867bdea7c13e0076dec17cfa1e4dce13c.1920x1080.jpg?t=1770465482\")",
+      "Bash(curl -sI \"https://www.videogameschronicle.com/files/2025/05/Vice_City_09.jpg\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/storesearch/?term=Marathon+Bungie&l=english&cc=US\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/storesearch/?term=Marathon&l=english&cc=US\")",
+      "Bash(curl -s \"https://store.steampowered.com/api/appdetails?appids=3065800\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3357650/9699288b90d0aad320e998f107b59edd27e9ea61/ss_9699288b90d0aad320e998f107b59edd27e9ea61.1920x1080.jpg?t=1774249238\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3958690/a47960df3091f3040efb84c1ae9c284357b5e5be/ss_a47960df3091f3040efb84c1ae9c284357b5e5be.1920x1080.jpg?t=1774553413\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3265700/b1dc50ea55ff96ba2ff0d83578c6002206612479/ss_b1dc50ea55ff96ba2ff0d83578c6002206612479.1920x1080.jpg?t=1774363861\")",
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d '{\"\"requests\"\":[{\"\"type\"\":\"\"execute\"\",\"\"stmt\"\":{\"\"sql\"\":\"\"PRAGMA table_info\\(Article\\)\"\"}}]}')",
+      "Bash(cat:*)",
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d '{\"\"requests\"\":[{\"\"type\"\":\"\"execute\"\",\"\"stmt\"\":{\"\"sql\"\":\"\"SELECT slug, title, imageUrl FROM Article ORDER BY publishedAt DESC LIMIT 6\"\"}}]}')",
+      "WebFetch(domain:www.igdb.com)",
+      "WebFetch(domain:www.psfanatic.com)",
+      "WebFetch(domain:housemarque.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{size_download}\" \"https://images.squarespace-cdn.com/content/v1/5bfd4f00710699387b6a460a/6ca2725a-e1ae-4ba7-b6f0-5bd4cd349779/SAROS_1_Small.jpg?format=original\")",
+      "Bash(curl -s -I \"https://images.squarespace-cdn.com/content/v1/5bfd4f00710699387b6a460a/6ca2725a-e1ae-4ba7-b6f0-5bd4cd349779/SAROS_1_Small.jpg?format=original\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{size_download}\" \"https://images.squarespace-cdn.com/content/v1/5bfd4f00710699387b6a460a/6ca2725a-e1ae-4ba7-b6f0-5bd4cd349779/SAROS_1_Small.jpg?format=2500w\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{size_download}\" \"https://blog.playstation.com/tachyon/2028/03/25a27869956bc9cf41719732ffb285c4c69786d9-scaled.jpg?resize=1920%2C1080&crop_strategy=smart\")",
+      "Bash(IMAGE_URL=\"https://blog.playstation.com/tachyon/2028/03/25a27869956bc9cf41719732ffb285c4c69786d9-scaled.jpg?resize=1920%2C1080&crop_strategy=smart\")",
+      "Bash(__NEW_LINE_2106d6f370b78d17__ curl:*)"
     ]
   }
 }

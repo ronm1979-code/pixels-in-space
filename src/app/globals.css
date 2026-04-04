@@ -27,8 +27,28 @@
 }
 
 body {
-  background-color: var(--color-bg-body);
+  background-color: #0f0f1a;
   color: var(--color-text-primary);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3010850/ss_db64ec22896abbad19eea6c313ad5ebaf33e1cb0.1920x1080.jpg?t=1774394049');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px) brightness(0.5);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(15, 15, 26, 0.7) 100%);
 }
 
 ::selection {
