@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { BackToTop } from "@/components/ui/BackToTop";
 import "./globals.css";
 
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-gaming" });
@@ -27,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`min-h-screen bg-bg-body text-text-primary antialiased ${orbitron.variable}`}>
+        <ScrollProgress />
         {children}
+        <BackToTop />
         <Analytics />
       </body>
     </html>

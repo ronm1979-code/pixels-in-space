@@ -43,15 +43,18 @@ body {
 
 /* ── Glass effects ── */
 .glass {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 /* ── Gradients ── */
@@ -72,20 +75,78 @@ body {
 
 /* ── Hover / motion ── */
 .card-hover {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow:
-    0 10px 30px rgba(108, 43, 217, 0.08),
-    0 4px 12px rgba(0, 0, 0, 0.05);
+    0 12px 35px rgba(108, 43, 217, 0.12),
+    0 4px 15px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(108, 43, 217, 0.08);
+}
+
+/* ── Score glow ── */
+.score-glow {
+  box-shadow: 0 0 12px rgba(5, 150, 105, 0.4);
+}
+
+/* ── Scroll progress bar ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6c2bd9, #0891b2, #10b981);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ── Back to top ── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ── Trending marquee ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 /* ── Decorative line ── */
+@keyframes lineFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
 .line-glow {
   height: 3px;
-  background: linear-gradient(90deg, #6c2bd9, #0891b2, #10b981);
+  background: linear-gradient(90deg, #6c2bd9, #0891b2, #10b981, #ec4899, #6c2bd9);
+  background-size: 200% 100%;
+  animation: lineFlow 4s linear infinite;
 }
 
 /* ── Animated border cards ── */
@@ -205,4 +266,12 @@ body {
   width: 100%;
   height: auto;
   background-color: var(--color-bg-body);
+}
+
+.prose-game iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  border: 0;
 }

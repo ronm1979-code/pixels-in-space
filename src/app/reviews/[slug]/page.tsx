@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScoreBadge } from "@/components/ui/ScoreBadge";
+import { ReadTime } from "@/components/ui/ReadTime";
+import { ShareButtons } from "@/components/ui/ShareButtons";
 import { parseJsonField, formatDate } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -118,7 +120,7 @@ export default async function ReviewPage({
                   </p>
                 )}
               </div>
-              <div className="mt-3 flex items-center gap-4">
+              <div className="mt-3 flex flex-wrap items-center gap-3">
                 <Link
                   href={`/games/${review.game.slug}`}
                   className="text-sm text-text-muted hover:text-primary"
@@ -128,6 +130,10 @@ export default async function ReviewPage({
                 <span className="text-sm text-text-muted">
                   {formatDate(review.publishedAt ?? review.createdAt)}
                 </span>
+                <ReadTime content={review.content} />
+                <div className="ml-auto">
+                  <ShareButtons title={review.title} slug={review.slug} type="reviews" />
+                </div>
               </div>
             </div>
           </div>

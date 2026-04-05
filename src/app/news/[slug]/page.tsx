@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/Badge";
+import { ReadTime } from "@/components/ui/ReadTime";
+import { ShareButtons } from "@/components/ui/ShareButtons";
 import { formatDate } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -79,11 +81,15 @@ export default async function ArticlePage({
       <main className="mx-auto max-w-3xl px-4 py-8 lg:px-0">
         {/* Article header */}
         <div className="mb-8">
-          <div className="mb-4 flex items-center gap-3">
+          <div className="mb-4 flex flex-wrap items-center gap-3">
             <Badge variant={article.category}>{article.category}</Badge>
             <span className="text-sm text-text-muted">
               {formatDate(article.publishedAt ?? article.createdAt)}
             </span>
+            <ReadTime content={article.content} />
+            <div className="ml-auto">
+              <ShareButtons title={article.title} slug={article.slug} type="news" />
+            </div>
           </div>
 
           <h1 className="text-3xl font-bold leading-tight md:text-4xl">

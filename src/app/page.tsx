@@ -5,6 +5,7 @@ import { HeroCarousel } from "@/components/news/HeroCarousel";
 import { NewsCard } from "@/components/news/NewsCard";
 import { ReviewCard } from "@/components/reviews/ReviewCard";
 import { GameCard } from "@/components/games/GameCard";
+import { TrendingMarquee } from "@/components/ui/TrendingMarquee";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -89,6 +90,9 @@ export default async function HomePage() {
             </div>
           </section>
         )}
+
+        {/* Trending Now */}
+        <TrendingMarquee games={trendingGames.map(g => ({ slug: g.slug, title: g.title, averageScore: g.averageScore }))} />
 
         {/* More News */}
         {gridArticles.length > 0 && (

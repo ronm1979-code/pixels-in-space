@@ -38,7 +38,7 @@ export function ReviewCard({
               No Image
             </div>
           )}
-          <div className="absolute right-3 top-3">
+          <div className="absolute right-3 top-3 score-glow rounded-xl">
             <ScoreBadge score={score} size="md" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />

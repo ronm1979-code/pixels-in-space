@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Rocket } from "lucide-react";
 import { SearchModal } from "./SearchModal";
 import { MobileMenu } from "./MobileMenu";
+import { NavLink } from "./NavLink";
 
 const NAV_LINKS = [
   { href: "/news", label: "News" },
@@ -26,13 +27,7 @@ export function Header() {
 
         <nav className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-lg px-4 py-2 font-[family-name:var(--font-gaming)] text-xs font-semibold uppercase tracking-wider text-text-secondary transition-all hover:bg-primary/5 hover:text-primary"
-            >
-              {link.label}
-            </Link>
+            <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
         </nav>
 
