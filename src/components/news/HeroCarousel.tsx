@@ -82,7 +82,7 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
             <Badge variant={article.category} className="mb-3">
               {article.category}
             </Badge>
-            <h2 className="mb-2 max-w-3xl text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl lg:text-4xl">
+            <h2 className="mb-2 max-w-3xl font-[family-name:var(--font-gaming)] text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl lg:text-4xl">
               {article.title}
             </h2>
             {article.summary && (

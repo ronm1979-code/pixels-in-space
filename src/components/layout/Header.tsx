@@ -20,7 +20,7 @@ export function Header() {
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white shadow-sm transition-transform group-hover:scale-105">
             <Rocket className="h-5 w-5" />
           </div>
-          <span className="text-xl font-bold tracking-tight">
+          <span className="font-[family-name:var(--font-gaming)] text-lg font-bold tracking-wider">
             Pixels <span className="gradient-text">in Space</span>
           </span>
         </Link>

@@ -47,7 +47,7 @@ export function NewsCard({
               <Badge variant={category} className="mb-3">
                 {category}
               </Badge>
-              <h2 className="mb-2 text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
+              <h2 className="mb-2 font-[family-name:var(--font-gaming)] text-xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
                 {title}
               </h2>
               {summary && (
@@ -88,7 +88,7 @@ export function NewsCard({
               {timeAgo(publishedAt ?? createdAt)}
             </span>
           </div>
-          <h3 className="mb-2 line-clamp-2 text-[15px] font-semibold leading-snug transition-colors group-hover:text-primary">
+          <h3 className="mb-2 line-clamp-2 font-[family-name:var(--font-gaming)] text-[13px] font-semibold leading-snug transition-colors group-hover:text-primary">
             {title}
           </h3>
           {summary && (

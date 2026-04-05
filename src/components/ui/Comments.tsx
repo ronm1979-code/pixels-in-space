@@ -123,7 +123,7 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
 
   return (
     <section className="border-t border-border pt-10">
-      <h2 className="mb-6 text-xl font-bold">
+      <h2 className="mb-6 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">
         Comments{" "}
         {comments.length > 0 && (
           <span className="text-base font-normal text-text-muted">

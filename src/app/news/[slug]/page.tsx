@@ -92,7 +92,7 @@ export default async function ArticlePage({
             </div>
           </div>
 
-          <h1 className="text-3xl font-bold leading-tight md:text-4xl">
+          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold leading-tight md:text-3xl">
             {article.title}
           </h1>
 
@@ -143,7 +143,7 @@ export default async function ArticlePage({
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
           <section className="border-t border-border pt-10">
-            <h2 className="mb-5 text-xl font-bold">More Stories</h2>
+            <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">More Stories</h2>
             <div className="grid gap-3">
               {relatedArticles.map((related) => (
                 <Link

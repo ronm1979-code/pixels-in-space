@@ -188,10 +188,10 @@ export default async function HomePage() {
 function SectionHeader({ title, href }: { title: string; href: string }) {
   return (
     <div className="mb-5 flex items-center justify-between">
-      <h2 className="text-xl font-bold">{title}</h2>
+      <h2 className="font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">{title}</h2>
       <Link
         href={href}
-        className="flex items-center gap-1 text-sm text-text-muted transition-colors hover:text-primary"
+        className="flex items-center gap-1 font-[family-name:var(--font-gaming)] text-xs uppercase tracking-wider text-text-muted transition-colors hover:text-primary"
       >
         View all <ChevronRight className="h-3.5 w-3.5" />
       </Link>

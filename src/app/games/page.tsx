@@ -54,7 +54,7 @@ export default async function GamesPage({
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-bg-body" />
         <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-10 lg:px-8">
-          <h1 className="text-3xl font-bold text-white">Games</h1>
+          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold uppercase tracking-wider text-white">Games</h1>
           <p className="mt-1 text-white/60">
             Browse our game database
           </p>

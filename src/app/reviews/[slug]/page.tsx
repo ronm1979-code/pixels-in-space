@@ -106,7 +106,7 @@ export default async function ReviewPage({
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
                       Review
                     </p>
-                    <h1 className="mt-1 text-2xl font-bold md:text-3xl">
+                    <h1 className="mt-1 font-[family-name:var(--font-gaming)] text-xl font-bold md:text-2xl">
                       {review.game.title}
                     </h1>
                   </div>

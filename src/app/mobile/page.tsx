@@ -107,7 +107,7 @@ export default async function MobilePage({
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-bg-body" />
         <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-10 lg:px-8">
-          <h1 className="text-3xl font-bold text-white">Mobile Gaming</h1>
+          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold uppercase tracking-wider text-white">Mobile Gaming</h1>
           <p className="mt-1 text-white/60">
             Top games and latest news for iOS and Android
           </p>
@@ -133,7 +133,7 @@ export default async function MobilePage({
 
         {/* Trending Mobile Games */}
         <section className="mb-12">
-          <h2 className="mb-5 text-xl font-bold">Trending Mobile Games</h2>
+          <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Trending Mobile Games</h2>
           {games.length === 0 ? (
             <div className="rounded-xl border border-border bg-white py-16 text-center shadow-sm">
               <p className="text-text-muted">
@@ -186,7 +186,7 @@ export default async function MobilePage({
 
         {/* Latest Mobile News */}
         <section>
-          <h2 className="mb-5 text-xl font-bold">Latest Mobile News</h2>
+          <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Latest Mobile News</h2>
           {articles.length === 0 ? (
             <div className="rounded-xl border border-border bg-white py-16 text-center shadow-sm">
               <p className="text-text-muted">

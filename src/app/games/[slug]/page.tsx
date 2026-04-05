@@ -99,7 +99,7 @@ export default async function GamePage({
           </div>
 
           <div className="flex-1">
-            <h1 className="mb-4 text-3xl font-bold md:text-4xl">
+            <h1 className="mb-4 font-[family-name:var(--font-gaming)] text-2xl font-bold md:text-3xl">
               {game.title}
             </h1>
 
@@ -173,7 +173,7 @@ export default async function GamePage({
         {/* Trailer */}
         {youtubeId && (
           <section className="mb-12">
-            <h2 className="mb-4 flex items-center gap-2 text-xl font-bold">
+            <h2 className="mb-4 flex items-center gap-2 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">
               <Play className="h-5 w-5 text-primary" /> Trailer
             </h2>
             <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
@@ -193,7 +193,7 @@ export default async function GamePage({
         {/* Screenshots */}
         {screenshots.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-4 text-xl font-bold">Screenshots</h2>
+            <h2 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Screenshots</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {screenshots.map((src, i) => (
                 <div
@@ -216,7 +216,7 @@ export default async function GamePage({
         {/* Review */}
         {review && (
           <section className="mb-12">
-            <h2 className="mb-4 text-xl font-bold">Our Review</h2>
+            <h2 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Our Review</h2>
             <Link
               href={`/reviews/${review.slug}`}
               className="card-hover block rounded-xl border border-border bg-white shadow-sm p-6"
@@ -239,7 +239,7 @@ export default async function GamePage({
         {/* Related News */}
         {articles.length > 0 && (
           <section>
-            <h2 className="mb-5 text-xl font-bold">Related News</h2>
+            <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Related News</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {articles.map((article) => (
                 <NewsCard
