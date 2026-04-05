@@ -185,7 +185,12 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code} %{size_download}\" \"https://images.squarespace-cdn.com/content/v1/5bfd4f00710699387b6a460a/6ca2725a-e1ae-4ba7-b6f0-5bd4cd349779/SAROS_1_Small.jpg?format=2500w\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code} %{size_download}\" \"https://blog.playstation.com/tachyon/2028/03/25a27869956bc9cf41719732ffb285c4c69786d9-scaled.jpg?resize=1920%2C1080&crop_strategy=smart\")",
       "Bash(IMAGE_URL=\"https://blog.playstation.com/tachyon/2028/03/25a27869956bc9cf41719732ffb285c4c69786d9-scaled.jpg?resize=1920%2C1080&crop_strategy=smart\")",
-      "Bash(__NEW_LINE_2106d6f370b78d17__ curl:*)"
+      "Bash(__NEW_LINE_2106d6f370b78d17__ curl:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -I \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1716740/ss_4887dc140a637684ddcfca518458668409f946dc.1920x1080.jpg?t=1773759594\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -I \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/ss_ef0f63061d0a0a9a7e46f3b84f125d25330e8f19.1920x1080.jpg?t=1765831644\")",
+      "WebFetch(domain:www.gaminginstincts.com)",
+      "WebFetch(domain:news.xbox.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -I \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/39210/ss_a70cbc9141d47a6e97f03da381a05bda44ceb847.1920x1080.jpg?t=1774575436\")"
     ]
   }
 }

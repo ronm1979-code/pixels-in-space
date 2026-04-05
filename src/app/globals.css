@@ -27,13 +27,8 @@
 }
 
 body {
-  background-color: #0f0f1a;
+  background-color: var(--color-bg-body);
   color: var(--color-text-primary);
-  background-image: url('https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3010850/ss_db64ec22896abbad19eea6c313ad5ebaf33e1cb0.1920x1080.jpg?t=1774394049');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
 ::selection {
