@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   },
   description:
     "Breaking gaming news, expert reviews, and in-depth coverage of the biggest games. Your daily source for everything gaming.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
