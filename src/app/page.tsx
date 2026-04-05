@@ -91,9 +91,6 @@ export default async function HomePage() {
           </section>
         )}
 
-        {/* Trending Now */}
-        <TrendingMarquee games={trendingGames.map(g => ({ slug: g.slug, title: g.title, averageScore: g.averageScore }))} />
-
         {/* More News */}
         {gridArticles.length > 0 && (
           <section className="mb-14">
