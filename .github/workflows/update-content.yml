@@ -1,9 +1,9 @@
 name: Update Site Content
 
 on:
-  schedule:
-    - cron: '0 */5 * * *'  # Every 5 hours
-  workflow_dispatch: {}      # Manual trigger
+  # schedule:
+  #   - cron: '0 */5 * * *'  # Disabled until tested
+  workflow_dispatch: {}      # Manual trigger only
 
 jobs:
   update:
