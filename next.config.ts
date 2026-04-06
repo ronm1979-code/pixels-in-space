@@ -23,6 +23,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "monstervine.com" },
       { protocol: "https", hostname: "www.gematsu.com" },
       { protocol: "https", hostname: "assetsio.gnwcdn.com" },
+      { protocol: "https", hostname: "images.nintendolife.com" },
+      { protocol: "https", hostname: "assets.nintendo.com" },
     ],
   },
 };
