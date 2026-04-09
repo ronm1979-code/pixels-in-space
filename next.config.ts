@@ -25,6 +25,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "assetsio.gnwcdn.com" },
       { protocol: "https", hostname: "images.nintendolife.com" },
       { protocol: "https", hostname: "assets.nintendo.com" },
+      { protocol: "https", hostname: "images.ctfassets.net" },
     ],
   },
 };
