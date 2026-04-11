@@ -24,7 +24,7 @@ export default async function ReviewsPage({
   const [reviews, total, heroGame] = await Promise.all([
     prisma.review.findMany({
       where: { status: "published" },
-      orderBy: { publishedAt: "desc" },
+      orderBy: { game: { releaseDate: "desc" } },
       skip: (page - 1) * REVIEWS_PER_PAGE,
       take: REVIEWS_PER_PAGE,
       include: { game: true },

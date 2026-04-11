@@ -21,7 +21,7 @@ export default async function HomePage() {
     }),
     prisma.review.findMany({
       where: { status: "published" },
-      orderBy: { publishedAt: "desc" },
+      orderBy: { game: { releaseDate: "desc" } },
       take: 4,
       include: { game: true },
     }),
