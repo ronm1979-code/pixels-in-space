@@ -159,7 +159,7 @@ export function SearchModal() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex h-9 w-9 items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-black/5 hover:text-text-primary"
+        className="flex h-9 w-9 items-center justify-center rounded-lg text-purple-200/60 transition-colors hover:bg-white/10 hover:text-purple-300"
         title="Search (Ctrl+K)"
       >
         <Search className="h-4 w-4" />

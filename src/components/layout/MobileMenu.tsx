@@ -18,7 +18,7 @@ export function MobileMenu() {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-text-secondary md:hidden"
+        className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-purple-200/60 hover:text-purple-300 md:hidden"
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
