@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.nintendolife.com" },
       { protocol: "https", hostname: "assets.nintendo.com" },
       { protocol: "https", hostname: "images.ctfassets.net" },
+      { protocol: "https", hostname: "cloudbase.gg" },
+      { protocol: "https", hostname: "images.launchbox-app.com" },
+      { protocol: "https", hostname: "worthplaying.com" },
+      { protocol: "https", hostname: "images.squarespace-cdn.com" },
     ],
   },
 };
