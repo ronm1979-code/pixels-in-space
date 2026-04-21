@@ -40,10 +40,10 @@ export function FeaturedReviewHero({
   return (
     <Link
       href={`/reviews/${slug}`}
-      className="group relative flex h-full min-h-[450px] flex-col overflow-hidden rounded-2xl border border-purple-500/20 bg-gray-950 shadow-lg"
+      className="group relative block overflow-hidden rounded-2xl border border-purple-500/20 bg-gray-950 shadow-lg"
     >
-      {/* Background image fills entire card */}
-      <div className="absolute inset-0">
+      {/* Background image */}
+      <div className="relative aspect-[16/3.6] w-full min-h-[130px] md:min-h-[144px]">
         {coverImage && (
           <Image
             src={coverImage}
@@ -51,20 +51,21 @@ export function FeaturedReviewHero({
             fill
             priority
             className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1024px) 100vw, 40vw"
+            sizes="(max-width: 1200px) 100vw, 1200px"
             quality={90}
           />
         )}
-        {/* Dark gradient overlay from bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-gray-950/20" />
-        {/* Purple glow accents */}
-        <div className="absolute -bottom-10 left-1/2 h-60 w-60 -translate-x-1/2 rounded-full bg-purple-600/25 blur-3xl" />
+        {/* Dark gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/60 to-gray-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
+        {/* Purple + cyan glow accents */}
+        <div className="absolute -left-20 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full bg-purple-600/25 blur-3xl" />
         <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-500/15 blur-3xl" />
       </div>
 
-      {/* Top: Featured badge */}
-      <div className="relative z-10 flex items-center justify-between p-4 md:p-5">
-        <div className="flex items-center gap-2 rounded-full border border-purple-400/40 bg-purple-500/20 px-3 py-1 backdrop-blur-md">
+      {/* Top-left: Featured badge */}
+      <div className="absolute left-4 top-4 z-10 md:left-6 md:top-5">
+        <div className="flex items-center gap-1.5 rounded-full border border-purple-400/40 bg-purple-500/20 px-3 py-1 backdrop-blur-md">
           <Star className="h-3 w-3 fill-purple-300 text-purple-300" />
           <span className="font-[family-name:var(--font-gaming)] text-[10px] font-bold uppercase tracking-widest text-purple-200">
             Featured Review
@@ -72,32 +73,32 @@ export function FeaturedReviewHero({
         </div>
       </div>
 
-      {/* Score badge (top right, floating) */}
-      <div className="absolute right-4 top-14 z-10 flex flex-col items-center md:right-5 md:top-16">
-        <div className={`relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br ${scoreColor} shadow-2xl md:h-24 md:w-24`}>
-          <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${scoreColor} blur-xl opacity-60`} />
-          <span className="relative font-[family-name:var(--font-gaming)] text-3xl font-black text-white drop-shadow-lg md:text-4xl">
+      {/* Top-right: Score badge */}
+      <div className="absolute right-4 top-4 z-10 flex flex-col items-center md:right-6 md:top-5">
+        <div className={`relative flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${scoreColor} shadow-2xl md:h-20 md:w-20`}>
+          <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${scoreColor} blur-lg opacity-60`} />
+          <span className="relative font-[family-name:var(--font-gaming)] text-2xl font-black text-white drop-shadow-lg md:text-3xl">
             {Math.round(score)}
           </span>
         </div>
-        <span className="mt-1.5 font-[family-name:var(--font-gaming)] text-[10px] font-bold uppercase tracking-widest text-white drop-shadow-md">
+        <span className="mt-1 font-[family-name:var(--font-gaming)] text-[9px] font-bold uppercase tracking-widest text-white drop-shadow-md md:text-[10px]">
           {scoreLabel}
         </span>
       </div>
 
-      {/* Bottom: Title + verdict + CTA */}
-      <div className="relative z-10 mt-auto p-5 md:p-6">
-        <h2 className="font-[family-name:var(--font-gaming)] text-2xl font-bold uppercase leading-tight tracking-tight text-white drop-shadow-lg md:text-3xl">
+      {/* Bottom-left: Title + verdict + CTA */}
+      <div className="absolute bottom-0 left-0 right-28 z-10 p-4 md:right-32 md:p-6">
+        <h2 className="font-[family-name:var(--font-gaming)] text-xl font-bold uppercase leading-tight tracking-tight text-white drop-shadow-lg md:text-3xl">
           {gameTitle}
         </h2>
         {verdict && (
-          <p className="mt-2 line-clamp-2 text-sm text-white/80 md:text-base">
+          <p className="mt-2 line-clamp-2 text-xs text-white/80 md:text-sm">
             &ldquo;{verdict}&rdquo;
           </p>
         )}
-        <div className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white/10 px-3 py-1.5 font-[family-name:var(--font-gaming)] text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-all group-hover:bg-white/20 group-hover:gap-3">
-          Read Full Review
-          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+        <div className="mt-3 inline-flex items-center gap-1.5 rounded-md bg-white/10 px-3 py-1.5 font-[family-name:var(--font-gaming)] text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-all group-hover:bg-white/20 group-hover:gap-2.5 md:text-xs">
+          Read Review
+          <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 md:h-3.5 md:w-3.5" />
         </div>
       </div>
     </Link>

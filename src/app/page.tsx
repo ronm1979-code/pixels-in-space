@@ -74,26 +74,10 @@ export default async function HomePage() {
     <>
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
-        {/* Top: Carousel (60%) + Featured Review (40%) */}
+        {/* Hero Carousel */}
         {carouselArticles.length > 0 ? (
-          <section className="mb-10">
-            <div className="grid gap-5 lg:grid-cols-5">
-              <div className="lg:col-span-3">
-                <HeroCarousel articles={carouselArticles} />
-              </div>
-              {featuredReview && (
-                <div className="lg:col-span-2">
-                  <FeaturedReviewHero
-                    slug={featuredReview.slug}
-                    gameTitle={featuredReview.game.title}
-                    verdict={featuredReview.verdict}
-                    score={featuredReview.score}
-                    coverImage={featuredReview.game.coverImage}
-                    publishedAt={featuredReview.publishedAt}
-                  />
-                </div>
-              )}
-            </div>
+          <section className="mb-6">
+            <HeroCarousel articles={carouselArticles} />
           </section>
         ) : (
           <section className="mb-10">
@@ -109,6 +93,20 @@ export default async function HomePage() {
                 Content is on its way. Check back soon!
               </p>
             </div>
+          </section>
+        )}
+
+        {/* Featured Review banner */}
+        {featuredReview && (
+          <section className="mb-10">
+            <FeaturedReviewHero
+              slug={featuredReview.slug}
+              gameTitle={featuredReview.game.title}
+              verdict={featuredReview.verdict}
+              score={featuredReview.score}
+              coverImage={featuredReview.game.coverImage}
+              publishedAt={featuredReview.publishedAt}
+            />
           </section>
         )}
 
