@@ -17,7 +17,7 @@ export function TopRatedWidget({ games }: { games: Game[] }) {
     <div className="widget-card">
       <h4 className="widget-title">
         <Star className="h-4 w-4 text-[#22d3ee]" fill="currentColor" />
-        Top Rated This Month
+        Top Rated Recently
       </h4>
       <div className="flex flex-col gap-3.5">
         {games.slice(0, 5).map((game, i) => {
