@@ -43,7 +43,7 @@ export function FeaturedReviewHero({
       className="group relative block overflow-hidden rounded-2xl border border-purple-500/20 bg-gray-950 shadow-lg"
     >
       {/* Background image */}
-      <div className="relative aspect-[16/9] w-full min-h-[240px] sm:aspect-[16/3.6] sm:min-h-[144px]">
+      <div className="relative aspect-[16/9] w-full min-h-[216px] sm:aspect-[16/3.24] sm:min-h-[130px]">
         {coverImage && (
           <Image
             src={coverImage}

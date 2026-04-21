@@ -47,7 +47,7 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
       onMouseLeave={() => setPaused(false)}
     >
       {/* Background image */}
-      <div className="relative aspect-[4/3] bg-gray-900 sm:aspect-[21/8] sm:min-h-[405px]">
+      <div className="relative aspect-[4/3] bg-gray-900 sm:aspect-[21/7.6] sm:min-h-[385px]">
         {articles.map((a, i) => (
           <div
             key={a.slug}
