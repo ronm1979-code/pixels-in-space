@@ -70,44 +70,44 @@ export function SearchModal() {
         style={{ position: "relative", maxWidth: 512, margin: "15vh auto 0", width: "calc(100% - 32px)" }}
         onMouseDown={(e) => e.stopPropagation()}
       >
-        <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-2xl">
+        <div className="overflow-hidden rounded-2xl border border-[rgba(139,92,246,0.18)] bg-[rgba(15,6,48,0.95)] shadow-2xl shadow-purple-900/50 backdrop-blur-md">
           {/* Input */}
-          <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-            <Search className="h-5 w-5 text-text-muted" />
+          <div className="flex items-center gap-3 border-b border-[rgba(139,92,246,0.18)] px-4 py-3">
+            <Search className="h-5 w-5 text-slate-400" />
             <input
               ref={inputRef}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search games, news, reviews..."
-              className="flex-1 bg-transparent text-base outline-none placeholder:text-text-muted"
+              className="flex-1 bg-transparent text-base text-white outline-none placeholder:text-slate-500"
             />
             {query && (
-              <button onClick={() => setQuery("")} className="text-text-muted hover:text-text-primary">
+              <button onClick={() => setQuery("")} className="text-slate-400 hover:text-white">
                 <X className="h-4 w-4" />
               </button>
             )}
-            <kbd className="hidden rounded border border-border px-1.5 py-0.5 text-[10px] text-text-muted sm:block">ESC</kbd>
+            <kbd className="hidden rounded border border-[rgba(139,92,246,0.25)] bg-[rgba(7,3,26,0.5)] px-1.5 py-0.5 text-[10px] text-slate-400 sm:block">ESC</kbd>
           </div>
 
           {/* Results */}
           <div className="max-h-[50vh] overflow-y-auto">
-            {loading && <div className="px-4 py-8 text-center text-sm text-text-muted">Searching...</div>}
+            {loading && <div className="px-4 py-8 text-center text-sm text-slate-400">Searching...</div>}
             {!loading && query.length >= 2 && !hasResults && (
-              <div className="px-4 py-8 text-center text-sm text-text-muted">No results for &ldquo;{query}&rdquo;</div>
+              <div className="px-4 py-8 text-center text-sm text-slate-400">No results for &ldquo;{query}&rdquo;</div>
             )}
             {!loading && hasResults && (
               <div className="py-2">
                 {results!.games.length > 0 && (
                   <div>
-                    <p className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                    <p className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                       <Gamepad2 className="mr-1 inline h-3 w-3" /> Games
                     </p>
                     {results!.games.map((g) => (
-                      <Link key={g.slug} href={`/games/${g.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-gray-50">
-                        <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                      <Link key={g.slug} href={`/games/${g.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-purple-500/10">
+                        <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-[#1a0838]">
                           {g.coverImage && <Image src={g.coverImage} alt={g.title} fill className="object-cover" sizes="40px" />}
                         </div>
-                        <span className="flex-1 text-sm font-medium">{g.title}</span>
+                        <span className="flex-1 text-sm font-medium text-white">{g.title}</span>
                         {g.averageScore && <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700">{Math.round(g.averageScore)}</span>}
                       </Link>
                     ))}
@@ -115,30 +115,30 @@ export function SearchModal() {
                 )}
                 {results!.articles.length > 0 && (
                   <div>
-                    <p className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                    <p className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                       <Newspaper className="mr-1 inline h-3 w-3" /> News
                     </p>
                     {results!.articles.map((a) => (
-                      <Link key={a.slug} href={`/news/${a.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-gray-50">
-                        <div className="relative h-10 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                      <Link key={a.slug} href={`/news/${a.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-purple-500/10">
+                        <div className="relative h-10 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-[#1a0838]">
                           {a.imageUrl && <Image src={a.imageUrl} alt={a.title} fill className="object-cover" sizes="64px" />}
                         </div>
-                        <span className="flex-1 text-sm line-clamp-1">{a.title}</span>
+                        <span className="flex-1 text-sm line-clamp-1 text-slate-200">{a.title}</span>
                       </Link>
                     ))}
                   </div>
                 )}
                 {results!.reviews.length > 0 && (
                   <div>
-                    <p className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                    <p className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                       <Star className="mr-1 inline h-3 w-3" /> Reviews
                     </p>
                     {results!.reviews.map((r) => (
-                      <Link key={r.slug} href={`/reviews/${r.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-gray-50">
-                        <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                      <Link key={r.slug} href={`/reviews/${r.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-purple-500/10">
+                        <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-[#1a0838]">
                           {r.game.coverImage && <Image src={r.game.coverImage} alt={r.game.title} fill className="object-cover" sizes="40px" />}
                         </div>
-                        <span className="flex-1 text-sm font-medium">{r.game.title}</span>
+                        <span className="flex-1 text-sm font-medium text-white">{r.game.title}</span>
                         <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700">{Math.round(r.score)}</span>
                       </Link>
                     ))}
@@ -147,7 +147,7 @@ export function SearchModal() {
               </div>
             )}
             {!loading && query.length < 2 && (
-              <div className="px-4 py-8 text-center text-sm text-text-muted">Type at least 2 characters to search</div>
+              <div className="px-4 py-8 text-center text-sm text-slate-400">Type at least 2 characters to search</div>
             )}
           </div>
         </div>

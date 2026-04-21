@@ -31,7 +31,7 @@ export function Pagination({
       )}
       {pages.map((page, i) =>
         page === "..." ? (
-          <span key={`dots-${i}`} className="px-2 text-text-muted">...</span>
+          <span key={`dots-${i}`} className="px-2 text-slate-400">...</span>
         ) : (
           <PageLink key={page} href={`${basePath}?page=${page}`} active={page === currentPage}>
             {page}
@@ -54,8 +54,8 @@ function PageLink({ href, active, children }: { href: string; active?: boolean; 
       className={cn(
         "flex h-9 min-w-9 items-center justify-center rounded-lg px-3 text-sm font-medium transition-all",
         active
-          ? "bg-primary text-white shadow-sm"
-          : "border border-border bg-white text-text-muted hover:border-primary/30 hover:text-primary"
+          ? "bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/30"
+          : "border border-[rgba(139,92,246,0.18)] bg-[rgba(26,10,58,0.55)] text-slate-400 hover:border-purple-500/55 hover:text-white"
       )}
     >
       {children}

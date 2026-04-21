@@ -67,8 +67,8 @@ export function NewsCard({
 
   return (
     <Link href={`/news/${slug}`} className="group block h-full">
-      <article className="card-hover flex h-full flex-col overflow-hidden rounded-xl border border-border bg-white shadow-sm">
-        <div className="relative aspect-video overflow-hidden bg-gray-100">
+      <article className="dark-card card-hover flex h-full flex-col overflow-hidden rounded-xl">
+        <div className="relative aspect-video overflow-hidden bg-[#1a0838]">
           {imageUrl ? (
             <Image
               src={imageUrl}
@@ -78,21 +78,21 @@ export function NewsCard({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : (
-            <div className="h-full w-full gradient-hero" />
+            <div className="h-full w-full bg-gradient-to-br from-[#4c1d95] to-[#1e1b4b]" />
           )}
         </div>
         <div className="flex flex-1 flex-col p-5">
           <div className="mb-3 flex items-center gap-2">
             <Badge variant={category}>{category}</Badge>
-            <span className="text-[11px] text-text-muted">
+            <span className="text-[11px] text-slate-500">
               {timeAgo(publishedAt ?? createdAt)}
             </span>
           </div>
-          <h3 className="mb-2 line-clamp-2 font-[family-name:var(--font-gaming)] text-[13px] font-semibold leading-snug transition-colors group-hover:text-primary">
+          <h3 className="mb-2 line-clamp-2 font-[family-name:var(--font-gaming)] text-[13px] font-semibold leading-snug text-white transition-colors group-hover:text-purple-300">
             {title}
           </h3>
           {summary && (
-            <p className="mt-auto line-clamp-2 text-sm leading-relaxed text-text-muted">
+            <p className="mt-auto line-clamp-2 text-sm leading-relaxed text-slate-400">
               {summary}
             </p>
           )}

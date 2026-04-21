@@ -29,24 +29,24 @@ export function ShareButtons({ title, slug, type = "news" }: { title: string; sl
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xs text-text-muted">Share</span>
+      <span className="text-xs text-slate-400">Share</span>
       <button
         onClick={shareTwitter}
-        className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-white text-text-muted transition-colors hover:border-primary/30 hover:text-primary"
+        className="flex h-8 w-8 items-center justify-center rounded-lg border border-[rgba(139,92,246,0.18)] bg-[rgba(26,10,58,0.55)] text-slate-400 transition-colors hover:border-purple-500/55 hover:text-purple-300"
         title="Share on X"
       >
         <span className="text-xs font-bold">𝕏</span>
       </button>
       <button
         onClick={shareReddit}
-        className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-white text-text-muted transition-colors hover:border-primary/30 hover:text-primary"
+        className="flex h-8 w-8 items-center justify-center rounded-lg border border-[rgba(139,92,246,0.18)] bg-[rgba(26,10,58,0.55)] text-slate-400 transition-colors hover:border-purple-500/55 hover:text-purple-300"
         title="Share on Reddit"
       >
         <Share2 className="h-3.5 w-3.5" />
       </button>
       <button
         onClick={copyLink}
-        className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-white text-text-muted transition-colors hover:border-primary/30 hover:text-primary"
+        className="flex h-8 w-8 items-center justify-center rounded-lg border border-[rgba(139,92,246,0.18)] bg-[rgba(26,10,58,0.55)] text-slate-400 transition-colors hover:border-purple-500/55 hover:text-purple-300"
         title="Copy link"
       >
         {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Link2 className="h-3.5 w-3.5" />}

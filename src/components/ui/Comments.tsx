@@ -122,11 +122,12 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
   }
 
   return (
-    <section className="border-t border-border pt-10">
-      <h2 className="mb-6 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">
+    <section className="border-t border-[rgba(139,92,246,0.18)] pt-10">
+      <h2 className="mb-6 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white">
+        <span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />
         Comments{" "}
         {comments.length > 0 && (
-          <span className="text-base font-normal text-text-muted">
+          <span className="text-base font-normal text-slate-400">
             ({comments.length})
           </span>
         )}
@@ -135,9 +136,9 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
       {/* Comment form */}
       <form
         onSubmit={handleSubmit}
-        className="mb-8 rounded-xl border border-border bg-white p-5 shadow-sm"
+        className="dark-card mb-8 rounded-xl p-5"
       >
-        <h3 className="mb-4 text-sm font-semibold text-text-secondary">
+        <h3 className="mb-4 text-sm font-semibold text-slate-300">
           Leave a comment
         </h3>
         <div className="mb-3">
@@ -147,7 +148,7 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             maxLength={50}
-            className="w-full rounded-lg border border-border bg-gray-50 px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary/40 focus:bg-white"
+            className="w-full rounded-lg border border-[rgba(139,92,246,0.18)] bg-[rgba(7,3,26,0.6)] px-4 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-purple-500/55"
           />
         </div>
         <div className="mb-3">
@@ -157,19 +158,19 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
             onChange={(e) => setContent(e.target.value)}
             maxLength={1000}
             rows={4}
-            className="w-full resize-none rounded-lg border border-border bg-gray-50 px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary/40 focus:bg-white"
+            className="w-full resize-none rounded-lg border border-[rgba(139,92,246,0.18)] bg-[rgba(7,3,26,0.6)] px-4 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-purple-500/55"
           />
-          <p className="mt-1 text-right text-xs text-text-muted">
+          <p className="mt-1 text-right text-xs text-slate-500">
             {content.length}/1000
           </p>
         </div>
         {error && (
-          <p className="mb-3 text-sm text-red-500">{error}</p>
+          <p className="mb-3 text-sm text-red-400">{error}</p>
         )}
         <button
           type="submit"
           disabled={submitting}
-          className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary/90 disabled:opacity-50"
+          className="rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition-all hover:shadow-purple-500/50 disabled:opacity-50"
         >
           {submitting ? "Posting..." : "Post Comment"}
         </button>
@@ -177,9 +178,9 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
 
       {/* Comments list */}
       {loading ? (
-        <p className="text-sm text-text-muted">Loading comments...</p>
+        <p className="text-sm text-slate-400">Loading comments...</p>
       ) : comments.length === 0 ? (
-        <p className="text-sm text-text-muted">
+        <p className="text-sm text-slate-400">
           No comments yet. Be the first to share your thoughts!
         </p>
       ) : (
@@ -187,7 +188,7 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
           {comments.map((comment) => (
             <div
               key={comment.id}
-              className="rounded-xl border border-border bg-white p-5 shadow-sm"
+              className="dark-card rounded-xl p-5"
             >
               <div className="mb-3 flex items-center gap-3">
                 <div
@@ -196,13 +197,13 @@ export function Comments({ articleId, reviewId }: CommentsProps) {
                   {comment.name.charAt(0).toUpperCase()}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">{comment.name}</p>
-                  <p className="text-xs text-text-muted">
+                  <p className="text-sm font-semibold text-white">{comment.name}</p>
+                  <p className="text-xs text-slate-500">
                     {timeAgo(comment.createdAt)}
                   </p>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-text-secondary">
+              <p className="text-sm leading-relaxed text-slate-300">
                 {comment.content}
               </p>
             </div>

@@ -95,26 +95,26 @@ export default async function MobilePage({
       <Header />
 
       {/* Hero header */}
-      <section className="relative overflow-hidden bg-gray-900">
+      <section className="relative overflow-hidden">
         {heroGame?.coverImage && (
           <Image
             src={heroGame.coverImage}
             alt=""
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-20"
             sizes="100vw"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-bg-body" />
-        <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-10 lg:px-8">
-          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold uppercase tracking-wider text-white">Mobile Gaming</h1>
-          <p className="mt-1 text-white/60">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07031a]/70 to-[#07031a]" />
+        <div className="relative mx-auto max-w-[1500px] px-5 pb-12 pt-10 lg:px-10">
+          <h1 className="font-[family-name:var(--font-gaming)] text-3xl font-black uppercase tracking-wider text-white">Mobile Gaming</h1>
+          <p className="mt-1 text-slate-400">
             Top games and latest news for iOS and Android
           </p>
         </div>
       </section>
 
-      <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
+      <main className="mx-auto max-w-[1500px] px-5 py-6 lg:px-10">
         {/* Filter pills */}
         <div className="mb-8 flex flex-wrap gap-2">
           <FilterPill href="/mobile" active={!filter}>
@@ -133,10 +133,10 @@ export default async function MobilePage({
 
         {/* Latest Mobile News */}
         <section className="mb-12">
-          <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Latest Mobile News</h2>
+          <h2 className="mb-5 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white"><span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />Latest Mobile News</h2>
           {articles.length === 0 ? (
-            <div className="rounded-xl border border-border bg-white py-16 text-center shadow-sm">
-              <p className="text-text-muted">
+            <div className="dark-card rounded-xl py-16 text-center">
+              <p className="text-slate-400">
                 No mobile articles found yet.
               </p>
             </div>
@@ -161,10 +161,10 @@ export default async function MobilePage({
 
         {/* Trending Mobile Games */}
         <section>
-          <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Trending Mobile Games</h2>
+          <h2 className="mb-5 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white"><span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />Trending Mobile Games</h2>
           {games.length === 0 ? (
-            <div className="rounded-xl border border-border bg-white py-16 text-center shadow-sm">
-              <p className="text-text-muted">
+            <div className="dark-card rounded-xl py-16 text-center">
+              <p className="text-slate-400">
                 No mobile games found yet.
               </p>
             </div>
@@ -174,8 +174,8 @@ export default async function MobilePage({
                 const genreList = JSON.parse(game.genres || "[]") as string[];
                 return (
                   <Link key={game.id} href={`/games/${game.slug}`} className="group block">
-                    <div className="card-hover overflow-hidden rounded-xl border border-border bg-white shadow-sm">
-                      <div className="relative aspect-video overflow-hidden bg-gray-100">
+                    <div className="dark-card card-hover overflow-hidden rounded-xl">
+                      <div className="relative aspect-video overflow-hidden bg-[#1a0838]">
                         {game.coverImage ? (
                           <Image
                             src={game.coverImage}
@@ -186,20 +186,20 @@ export default async function MobilePage({
                             quality={85}
                           />
                         ) : (
-                          <div className="h-full w-full gradient-hero" />
+                          <div className="h-full w-full bg-gradient-to-br from-[#4c1d95] to-[#1e1b4b]" />
                         )}
                         {game.averageScore != null && (
-                          <div className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500 text-sm font-bold text-white shadow-sm">
+                          <div className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500 text-sm font-bold text-white shadow-lg">
                             {Math.round(game.averageScore)}
                           </div>
                         )}
                       </div>
                       <div className="p-4">
-                        <h3 className="line-clamp-1 font-semibold transition-colors group-hover:text-primary">
+                        <h3 className="line-clamp-1 font-[family-name:var(--font-gaming)] font-bold text-white transition-colors group-hover:text-purple-300">
                           {game.title}
                         </h3>
                         {genreList.length > 0 && (
-                          <p className="mt-1 text-sm text-text-muted">
+                          <p className="mt-1 text-sm text-slate-400">
                             {genreList.slice(0, 3).join(" / ")}
                           </p>
                         )}
@@ -232,8 +232,8 @@ function FilterPill({
       href={href}
       className={`rounded-lg border px-4 py-1.5 text-sm font-medium transition-all ${
         active
-          ? "border-primary/30 bg-primary/5 text-primary"
-          : "border-border bg-white text-text-muted hover:border-primary/20 hover:text-text-secondary"
+          ? "border-purple-500/50 bg-purple-500/15 text-purple-300"
+          : "border-[rgba(139,92,246,0.18)] bg-[rgba(26,10,58,0.55)] text-slate-400 hover:border-purple-500/40 hover:text-white"
       }`}
     >
       {children}

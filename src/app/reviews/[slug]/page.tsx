@@ -84,7 +84,7 @@ export default async function ReviewPage({
         <div className="mb-8">
           {/* Mobile: stacked layout */}
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
-            <div className="relative mx-auto h-48 w-full max-w-xs overflow-hidden rounded-xl bg-gray-100 sm:mx-0 sm:h-52 sm:w-36 sm:flex-shrink-0">
+            <div className="relative mx-auto h-48 w-full max-w-xs overflow-hidden rounded-xl bg-[#1a0838] sm:mx-0 sm:h-52 sm:w-36 sm:flex-shrink-0">
               {review.game.coverImage ? (
                 <Image
                   src={review.game.coverImage}
@@ -94,7 +94,7 @@ export default async function ReviewPage({
                   sizes="(max-width: 640px) 100vw, 144px"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
+                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#4c1d95] to-[#1e1b4b] text-slate-400">
                   N/A
                 </div>
               )}
@@ -103,10 +103,10 @@ export default async function ReviewPage({
               <div>
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                    <p className="font-[family-name:var(--font-gaming)] text-[11px] font-semibold uppercase tracking-wider text-[#22d3ee]">
                       Review
                     </p>
-                    <h1 className="mt-1 font-[family-name:var(--font-gaming)] text-xl font-bold md:text-2xl">
+                    <h1 className="mt-1 font-[family-name:var(--font-gaming)] text-xl font-bold text-white md:text-2xl">
                       {review.game.title}
                     </h1>
                   </div>
@@ -115,7 +115,7 @@ export default async function ReviewPage({
                   </div>
                 </div>
                 {review.verdict && (
-                  <p className="mt-3 text-base italic leading-relaxed text-text-secondary sm:text-lg">
+                  <p className="mt-3 text-base italic leading-relaxed text-slate-300 sm:text-lg">
                     &ldquo;{review.verdict}&rdquo;
                   </p>
                 )}
@@ -123,11 +123,11 @@ export default async function ReviewPage({
               <div className="mt-3 flex flex-wrap items-center gap-3">
                 <Link
                   href={`/games/${review.game.slug}`}
-                  className="text-sm text-text-muted hover:text-primary"
+                  className="text-sm text-slate-400 hover:text-purple-300"
                 >
                   View game page
                 </Link>
-                <span className="text-sm text-text-muted">
+                <span className="text-sm text-slate-400">
                   {formatDate(review.publishedAt ?? review.createdAt)}
                 </span>
                 <ReadTime content={review.content} />
@@ -146,13 +146,13 @@ export default async function ReviewPage({
           <div className="mb-10 grid gap-5 md:grid-cols-2">
             {pros.length > 0 && (
               <div className="glow-card-green">
-                <div className="relative z-10 rounded-[14px] bg-white p-6">
-                  <h3 className="mb-4 text-lg font-bold text-emerald-600">Pros</h3>
+                <div className="relative z-10 rounded-[14px] bg-[#0f0630] p-6">
+                  <h3 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold text-emerald-400">Pros</h3>
                   <ul className="space-y-3">
                     {pros.map((pro, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm">
                         <span className="mt-0.5 text-emerald-400">&bull;</span>
-                        <span className="text-text-secondary">{pro}</span>
+                        <span className="text-slate-300">{pro}</span>
                       </li>
                     ))}
                   </ul>
@@ -161,13 +161,13 @@ export default async function ReviewPage({
             )}
             {cons.length > 0 && (
               <div className="glow-card-red">
-                <div className="relative z-10 rounded-[14px] bg-white p-6">
-                  <h3 className="mb-4 text-lg font-bold text-red-500">Cons</h3>
+                <div className="relative z-10 rounded-[14px] bg-[#0f0630] p-6">
+                  <h3 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold text-red-400">Cons</h3>
                   <ul className="space-y-3">
                     {cons.map((con, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm">
                         <span className="mt-0.5 text-red-400">&bull;</span>
-                        <span className="text-text-secondary">{con}</span>
+                        <span className="text-slate-300">{con}</span>
                       </li>
                     ))}
                   </ul>
@@ -188,15 +188,15 @@ export default async function ReviewPage({
 
         {/* Source scores */}
         {sourceReviews.length > 0 && (
-          <section className="border-t border-border pt-8">
-            <h2 className="mb-4 text-lg font-bold">Score Breakdown</h2>
+          <section className="border-t border-[rgba(139,92,246,0.18)] pt-8">
+            <h2 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider text-white">Score Breakdown</h2>
             <div className="grid gap-3">
               {sourceReviews.map((sr, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between rounded-lg border border-border bg-white shadow-sm px-4 py-3"
+                  className="dark-card flex items-center justify-between rounded-lg px-4 py-3"
                 >
-                  <span className="text-sm font-medium">{sr.source}</span>
+                  <span className="text-sm font-medium text-slate-300">{sr.source}</span>
                   <ScoreBadge score={sr.score} size="sm" />
                 </div>
               ))}

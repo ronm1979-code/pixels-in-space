@@ -83,7 +83,7 @@ export default async function ArticlePage({
         <div className="mb-8">
           <div className="mb-4 flex flex-wrap items-center gap-3">
             <Badge variant={article.category}>{article.category}</Badge>
-            <span className="text-sm text-text-muted">
+            <span className="text-sm text-slate-400">
               {formatDate(article.publishedAt ?? article.createdAt)}
             </span>
             <ReadTime content={article.content} />
@@ -92,12 +92,12 @@ export default async function ArticlePage({
             </div>
           </div>
 
-          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold leading-tight md:text-3xl">
+          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold leading-tight text-white md:text-3xl">
             {article.title}
           </h1>
 
           {article.summary && (
-            <p className="mt-4 text-lg leading-relaxed text-text-secondary">
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">
               {article.summary}
             </p>
           )}
@@ -124,13 +124,13 @@ export default async function ArticlePage({
 
         {/* Game link */}
         {article.game && (
-          <div className="mb-12 rounded-xl border border-border bg-white shadow-sm p-5">
-            <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+          <div className="dark-card mb-12 rounded-xl p-5">
+            <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
               Related Game
             </p>
             <Link
               href={`/games/${article.game.slug}`}
-              className="text-lg font-semibold text-primary hover:underline"
+              className="font-[family-name:var(--font-gaming)] text-lg font-bold text-purple-300 hover:text-purple-200 hover:underline"
             >
               {article.game.title}
             </Link>
@@ -142,19 +142,22 @@ export default async function ArticlePage({
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
-          <section className="border-t border-border pt-10">
-            <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">More Stories</h2>
+          <section className="border-t border-[rgba(139,92,246,0.18)] pt-10">
+            <h2 className="mb-5 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white">
+              <span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />
+              More Stories
+            </h2>
             <div className="grid gap-3">
               {relatedArticles.map((related) => (
                 <Link
                   key={related.id}
                   href={`/news/${related.slug}`}
-                  className="group rounded-xl border border-border bg-white shadow-sm p-4 transition-all hover:border-primary/20 hover:bg-purple-50/50"
+                  className="dark-card group rounded-xl p-4 transition-all hover:border-purple-500/55"
                 >
-                  <h3 className="font-medium transition-colors group-hover:text-primary">
+                  <h3 className="font-medium text-white transition-colors group-hover:text-purple-300">
                     {related.title}
                   </h3>
-                  <p className="mt-1 text-sm text-text-muted">
+                  <p className="mt-1 text-sm text-slate-400">
                     {formatDate(related.publishedAt ?? related.createdAt)}
                   </p>
                 </Link>

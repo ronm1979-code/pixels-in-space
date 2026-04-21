@@ -51,26 +51,26 @@ export default async function NewsPage({
       <Header />
 
       {/* Page header with background image */}
-      <section className="relative overflow-hidden bg-gray-900">
+      <section className="relative overflow-hidden">
         {heroImage?.imageUrl && (
           <Image
             src={heroImage.imageUrl}
             alt=""
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-20"
             sizes="100vw"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-bg-body" />
-        <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-10 lg:px-8">
-          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold uppercase tracking-wider text-white">Gaming News</h1>
-          <p className="mt-1 text-white/60">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07031a]/70 to-[#07031a]" />
+        <div className="relative mx-auto max-w-[1500px] px-5 pb-12 pt-10 lg:px-10">
+          <h1 className="font-[family-name:var(--font-gaming)] text-3xl font-black uppercase tracking-wider text-white">Gaming News</h1>
+          <p className="mt-1 text-slate-400">
             The latest stories from the gaming world
           </p>
         </div>
       </section>
 
-      <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
+      <main className="mx-auto max-w-[1500px] px-5 py-6 lg:px-10">
         <div className="mb-6 flex flex-wrap gap-2">
           <FilterPill href="/news" active={!category}>
             All
@@ -87,8 +87,8 @@ export default async function NewsPage({
         </div>
 
         {articles.length === 0 ? (
-          <div className="rounded-xl border border-border bg-white py-20 text-center shadow-sm">
-            <p className="text-text-muted">No articles in this category yet.</p>
+          <div className="dark-card rounded-xl py-20 text-center">
+            <p className="text-slate-400">No articles in this category yet.</p>
           </div>
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -135,8 +135,8 @@ function FilterPill({
       href={href}
       className={`rounded-lg border px-4 py-1.5 text-sm font-medium transition-all ${
         active
-          ? "border-primary/30 bg-primary/5 text-primary"
-          : "border-border bg-white text-text-muted hover:border-primary/20 hover:text-text-secondary"
+          ? "border-purple-500/50 bg-purple-500/15 text-purple-300"
+          : "border-[rgba(139,92,246,0.18)] bg-[rgba(26,10,58,0.55)] text-slate-400 hover:border-purple-500/40 hover:text-white"
       }`}
     >
       {children}

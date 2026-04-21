@@ -21,9 +21,8 @@ export function ReviewCard({
 }: ReviewCardProps) {
   return (
     <Link href={`/reviews/${slug}`} className="group block">
-      <article className="card-hover overflow-hidden rounded-xl border border-border bg-white shadow-sm">
-        {/* Landscape image on top */}
-        <div className="relative aspect-[16/7] overflow-hidden bg-gray-100">
+      <article className="dark-card card-hover overflow-hidden rounded-xl">
+        <div className="relative aspect-[16/7] overflow-hidden bg-[#1a0838]">
           {gameCoverImage ? (
             <Image
               src={gameCoverImage}
@@ -34,25 +33,24 @@ export function ReviewCard({
               quality={85}
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#4c1d95] to-[#1e1b4b] text-slate-400">
               No Image
             </div>
           )}
           <div className="absolute right-3 top-3 score-glow rounded-xl">
             <ScoreBadge score={score} size="md" />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        {/* Text below */}
         <div className="p-4">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+          <p className="font-[family-name:var(--font-gaming)] text-[11px] font-semibold uppercase tracking-wider text-[#22d3ee]">
             Review
           </p>
-          <h3 className="mt-0.5 line-clamp-1 text-lg font-semibold transition-colors group-hover:text-primary">
+          <h3 className="mt-0.5 line-clamp-1 font-[family-name:var(--font-gaming)] text-lg font-bold text-white transition-colors group-hover:text-purple-300">
             {gameTitle}
           </h3>
           {verdict && (
-            <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-text-muted">
+            <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-slate-400">
               {verdict}
             </p>
           )}

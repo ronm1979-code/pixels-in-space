@@ -29,14 +29,14 @@ export function MobileMenu() {
         style={{ position: "fixed", top: 68, left: 0, right: 0 }}
         onMouseDown={(e) => e.stopPropagation()}
       >
-        <div className="border-b border-border bg-white p-4 shadow-lg md:hidden">
+        <div className="border-b border-[rgba(139,92,246,0.18)] bg-[rgba(15,6,48,0.95)] p-4 shadow-2xl shadow-purple-900/40 backdrop-blur-md md:hidden">
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-text-secondary transition-colors hover:bg-primary/5 hover:text-primary"
+                className="rounded-lg px-4 py-3 text-sm font-medium text-slate-300 transition-colors hover:bg-purple-500/10 hover:text-purple-300"
               >
                 {link.label}
               </Link>

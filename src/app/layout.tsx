@@ -31,7 +31,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen bg-bg-body text-text-primary antialiased ${orbitron.variable}`}>
+      <body
+        className={`min-h-screen antialiased ${orbitron.variable}`}
+      >
+        <div className="cosmos" aria-hidden="true" />
+        <div className="stars" aria-hidden="true" />
+        <div className="stars2" aria-hidden="true" />
+        <div className="stars3" aria-hidden="true" />
+        <div className="shooting-star" aria-hidden="true" />
+        <div className="shooting-star" aria-hidden="true" />
         <ScrollProgress />
         {children}
         <BackToTop />

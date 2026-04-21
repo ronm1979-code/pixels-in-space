@@ -67,23 +67,23 @@ export default async function GamePage({
 
       {/* Hero banner with cover image */}
       {game.coverImage && (
-        <section className="relative h-64 overflow-hidden bg-gray-900 md:h-80">
+        <section className="relative h-64 overflow-hidden md:h-80">
           <Image
             src={game.coverImage}
             alt={game.title}
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-30"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-bg-body" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#07031a]/50 to-[#07031a]" />
         </section>
       )}
 
-      <main className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
+      <main className="mx-auto max-w-[1500px] px-5 py-8 lg:px-10">
         {/* Game info */}
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:gap-8">
-          <div className="-mt-32 relative h-80 w-56 flex-shrink-0 overflow-hidden rounded-2xl border-4 border-white bg-gray-100 shadow-2xl md:h-96 md:w-64">
+          <div className="-mt-32 relative h-80 w-56 flex-shrink-0 overflow-hidden rounded-2xl border-4 border-purple-400/30 bg-[#1a0838] shadow-2xl shadow-purple-900/40 md:h-96 md:w-64">
             {game.coverImage ? (
               <Image
                 src={game.coverImage}
@@ -92,33 +92,33 @@ export default async function GamePage({
                 className="object-cover"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center gradient-hero text-text-muted">
+              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#4c1d95] to-[#1e1b4b] text-slate-400">
                 No Image
               </div>
             )}
           </div>
 
           <div className="flex-1">
-            <h1 className="mb-4 font-[family-name:var(--font-gaming)] text-2xl font-bold md:text-3xl">
+            <h1 className="mb-4 font-[family-name:var(--font-gaming)] text-2xl font-black text-white md:text-4xl">
               {game.title}
             </h1>
 
-            <div className="mb-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-text-secondary">
+            <div className="mb-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300">
               {game.releaseDate && (
                 <span className="flex items-center gap-1.5">
-                  <Calendar className="h-4 w-4 text-text-muted" />
+                  <Calendar className="h-4 w-4 text-slate-400" />
                   {formatDate(game.releaseDate)}
                 </span>
               )}
               {game.developer && (
                 <span className="flex items-center gap-1.5">
-                  <Building2 className="h-4 w-4 text-text-muted" />
+                  <Building2 className="h-4 w-4 text-slate-400" />
                   {game.developer}
                 </span>
               )}
               {game.publisher && game.publisher !== game.developer && (
                 <span className="flex items-center gap-1.5">
-                  <Layers className="h-4 w-4 text-text-muted" />
+                  <Layers className="h-4 w-4 text-slate-400" />
                   {game.publisher}
                 </span>
               )}
@@ -141,7 +141,7 @@ export default async function GamePage({
             )}
 
             {game.description && (
-              <p className="mb-6 max-w-2xl leading-relaxed text-text-secondary">
+              <p className="mb-6 max-w-2xl leading-relaxed text-slate-300">
                 {game.description}
               </p>
             )}
@@ -151,19 +151,19 @@ export default async function GamePage({
               {game.averageScore != null && (
                 <div className="text-center">
                   <ScoreBadge score={game.averageScore} size="lg" />
-                  <p className="mt-1.5 text-xs text-text-muted">Overall</p>
+                  <p className="mt-1.5 text-xs text-slate-400">Overall</p>
                 </div>
               )}
               {game.metacriticScore != null && (
                 <div className="text-center">
                   <ScoreBadge score={game.metacriticScore} size="lg" />
-                  <p className="mt-1.5 text-xs text-text-muted">Metacritic</p>
+                  <p className="mt-1.5 text-xs text-slate-400">Metacritic</p>
                 </div>
               )}
               {game.steamScore != null && (
                 <div className="text-center">
                   <ScoreBadge score={game.steamScore} size="lg" />
-                  <p className="mt-1.5 text-xs text-text-muted">Steam</p>
+                  <p className="mt-1.5 text-xs text-slate-400">Steam</p>
                 </div>
               )}
             </div>
@@ -173,10 +173,10 @@ export default async function GamePage({
         {/* Trailer */}
         {youtubeId && (
           <section className="mb-12">
-            <h2 className="mb-4 flex items-center gap-2 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">
+            <h2 className="mb-4 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white"><span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />
               <Play className="h-5 w-5 text-primary" /> Trailer
             </h2>
-            <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
+            <div className="overflow-hidden rounded-2xl border border-[rgba(139,92,246,0.18)] shadow-lg shadow-purple-900/30">
               <div className="relative aspect-video">
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}`}
@@ -193,12 +193,12 @@ export default async function GamePage({
         {/* Screenshots */}
         {screenshots.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Screenshots</h2>
+            <h2 className="mb-4 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white"><span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />Screenshots</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {screenshots.map((src, i) => (
                 <div
                   key={i}
-                  className="relative aspect-video overflow-hidden rounded-xl border border-border shadow-sm"
+                  className="relative aspect-video overflow-hidden rounded-xl border border-[rgba(139,92,246,0.18)] shadow-lg shadow-purple-900/20"
                 >
                   <Image
                     src={src}
@@ -216,16 +216,16 @@ export default async function GamePage({
         {/* Review */}
         {review && (
           <section className="mb-12">
-            <h2 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Our Review</h2>
+            <h2 className="mb-4 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white"><span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />Our Review</h2>
             <Link
               href={`/reviews/${review.slug}`}
-              className="card-hover block rounded-xl border border-border bg-white shadow-sm p-6"
+              className="dark-card card-hover block rounded-xl p-6"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold">{review.title}</h3>
+                  <h3 className="font-[family-name:var(--font-gaming)] text-lg font-bold text-white">{review.title}</h3>
                   {review.verdict && (
-                    <p className="mt-2 italic text-text-secondary">
+                    <p className="mt-2 italic text-slate-300">
                       &ldquo;{review.verdict}&rdquo;
                     </p>
                   )}
@@ -239,7 +239,7 @@ export default async function GamePage({
         {/* Related News */}
         {articles.length > 0 && (
           <section>
-            <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Related News</h2>
+            <h2 className="mb-5 flex items-center gap-3 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-[0.15em] text-white"><span className="inline-block h-6 w-1.5 rounded bg-gradient-to-b from-[#22d3ee] to-[#8b5cf6]" />Related News</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {articles.map((article) => (
                 <NewsCard

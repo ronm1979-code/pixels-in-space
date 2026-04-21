@@ -22,7 +22,7 @@ export function GameCard({
 
   return (
     <Link href={`/games/${slug}`} className="group block">
-      <div className="card-hover overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+      <div className="dark-card card-hover overflow-hidden rounded-xl">
         <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
           {coverImage ? (
             <Image

@@ -767,7 +767,10 @@
       "Bash(curl -s -X POST https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline -H 'Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ' -H 'Content-Type: application/json' -d '{\"requests\":[{\"type\":\"execute\",\"stmt\":{\"sql\":\"SELECT slug FROM Article WHERE id = '\\\\''art_20260421_01'\\\\''\"}}]}')",
       "Bash(curl -s -X POST https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline -H 'Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ' -H 'Content-Type: application/json' -d '{\"requests\":[{\"type\":\"execute\",\"stmt\":{\"sql\":\"SELECT content FROM Article WHERE id = '\\\\''art_20260421_01'\\\\''\"}}]}')",
       "Bash(python3 -c \"import sys,json; r=json.load\\(sys.stdin\\); content=r['results'][0]['response']['result']['rows'][0][0]['value']; [print\\(line\\) for line in content.split\\('\\\\n'\\) if 'iframe' in line or 'youtube' in line.lower\\(\\)]\")",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git tag *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)"
     ]
   }
 }

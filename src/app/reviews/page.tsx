@@ -43,29 +43,29 @@ export default async function ReviewsPage({
     <>
       <Header />
 
-      <section className="relative overflow-hidden bg-gray-900">
+      <section className="relative overflow-hidden">
         {heroGame?.coverImage && (
           <Image
             src={heroGame.coverImage}
             alt=""
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-20"
             sizes="100vw"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-bg-body" />
-        <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-10 lg:px-8">
-          <h1 className="font-[family-name:var(--font-gaming)] text-2xl font-bold uppercase tracking-wider text-white">Game Reviews</h1>
-          <p className="mt-1 text-white/60">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07031a]/70 to-[#07031a]" />
+        <div className="relative mx-auto max-w-[1500px] px-5 pb-12 pt-10 lg:px-10">
+          <h1 className="font-[family-name:var(--font-gaming)] text-3xl font-black uppercase tracking-wider text-white">Game Reviews</h1>
+          <p className="mt-1 text-slate-400">
             Honest scores and expert analysis
           </p>
         </div>
       </section>
 
-      <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
+      <main className="mx-auto max-w-[1500px] px-5 py-6 lg:px-10">
         {reviews.length === 0 ? (
-          <div className="rounded-xl border border-border bg-white py-20 text-center shadow-sm">
-            <p className="text-text-muted">No reviews published yet.</p>
+          <div className="dark-card rounded-xl py-20 text-center">
+            <p className="text-slate-400">No reviews published yet.</p>
           </div>
         ) : (
           <div className="grid gap-4 md:grid-cols-2">
