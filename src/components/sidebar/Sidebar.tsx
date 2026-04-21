@@ -5,10 +5,21 @@ import { TagsWidget } from "./TagsWidget";
 
 export async function Sidebar() {
   const now = new Date();
+  const monthAgo = new Date();
+  monthAgo.setMonth(monthAgo.getMonth() - 1);
 
   const [topRated, upcoming] = await Promise.all([
+    // Games with a review published in the last month, ranked by average score
     prisma.game.findMany({
-      where: { averageScore: { not: null } },
+      where: {
+        averageScore: { not: null },
+        reviews: {
+          some: {
+            status: "published",
+            publishedAt: { gte: monthAgo },
+          },
+        },
+      },
       orderBy: { averageScore: "desc" },
       take: 5,
       select: { slug: true, title: true, platforms: true, coverImage: true, averageScore: true },
