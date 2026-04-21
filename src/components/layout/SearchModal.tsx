@@ -105,7 +105,7 @@ export function SearchModal() {
                     {results!.games.map((g) => (
                       <Link key={g.slug} href={`/games/${g.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-purple-500/10">
                         <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-[#1a0838]">
-                          {g.coverImage && <Image src={g.coverImage} alt={g.title} fill className="object-cover" sizes="40px" />}
+                          {g.coverImage && <Image src={g.coverImage} alt={g.title} fill className="object-cover" sizes="120px" />}
                         </div>
                         <span className="flex-1 text-sm font-medium text-white">{g.title}</span>
                         {g.averageScore && <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700">{Math.round(g.averageScore)}</span>}
@@ -121,7 +121,7 @@ export function SearchModal() {
                     {results!.articles.map((a) => (
                       <Link key={a.slug} href={`/news/${a.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-purple-500/10">
                         <div className="relative h-10 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-[#1a0838]">
-                          {a.imageUrl && <Image src={a.imageUrl} alt={a.title} fill className="object-cover" sizes="64px" />}
+                          {a.imageUrl && <Image src={a.imageUrl} alt={a.title} fill className="object-cover" sizes="200px" />}
                         </div>
                         <span className="flex-1 text-sm line-clamp-1 text-slate-200">{a.title}</span>
                       </Link>
@@ -136,7 +136,7 @@ export function SearchModal() {
                     {results!.reviews.map((r) => (
                       <Link key={r.slug} href={`/reviews/${r.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-purple-500/10">
                         <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-[#1a0838]">
-                          {r.game.coverImage && <Image src={r.game.coverImage} alt={r.game.title} fill className="object-cover" sizes="40px" />}
+                          {r.game.coverImage && <Image src={r.game.coverImage} alt={r.game.title} fill className="object-cover" sizes="120px" />}
                         </div>
                         <span className="flex-1 text-sm font-medium text-white">{r.game.title}</span>
                         <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700">{Math.round(r.score)}</span>

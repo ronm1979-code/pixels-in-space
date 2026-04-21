@@ -37,7 +37,7 @@ export function TopRatedWidget({ games }: { games: Game[] }) {
               </span>
               <div className="relative h-[50px] w-10 flex-shrink-0 overflow-hidden rounded-md bg-gradient-to-br from-[#1e1b4b] to-[#581c87]">
                 {game.coverImage && (
-                  <Image src={game.coverImage} alt={game.title} fill className="object-cover" sizes="40px" />
+                  <Image src={game.coverImage} alt={game.title} fill className="object-cover" sizes="120px" quality={90} />
                 )}
               </div>
               <div className="flex-1 min-w-0">
