@@ -9,16 +9,13 @@ export async function Sidebar() {
   monthAgo.setMonth(monthAgo.getMonth() - 1);
 
   const [topRated, upcoming] = await Promise.all([
-    // Games with a review published in the last month, ranked by average score
+    // Games released in the last month (and already out) with a published
+    // review, ranked by average score
     prisma.game.findMany({
       where: {
         averageScore: { not: null },
-        reviews: {
-          some: {
-            status: "published",
-            publishedAt: { gte: monthAgo },
-          },
-        },
+        releaseDate: { gte: monthAgo, lte: now },
+        reviews: { some: { status: "published" } },
       },
       orderBy: { averageScore: "desc" },
       take: 5,
