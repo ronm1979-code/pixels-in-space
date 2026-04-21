@@ -131,8 +131,36 @@ export default async function MobilePage({
           </FilterPill>
         </div>
 
-        {/* Trending Mobile Games */}
+        {/* Latest Mobile News */}
         <section className="mb-12">
+          <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Latest Mobile News</h2>
+          {articles.length === 0 ? (
+            <div className="rounded-xl border border-border bg-white py-16 text-center shadow-sm">
+              <p className="text-text-muted">
+                No mobile articles found yet.
+              </p>
+            </div>
+          ) : (
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {articles.map((article) => (
+                <NewsCard
+                  key={article.id}
+                  slug={article.slug}
+                  title={article.title}
+                  summary={article.summary}
+                  imageUrl={article.imageUrl}
+                  category={article.category}
+                  sourceName={article.sourceName}
+                  publishedAt={article.publishedAt}
+                  createdAt={article.createdAt}
+                />
+              ))}
+            </div>
+          )}
+        </section>
+
+        {/* Trending Mobile Games */}
+        <section>
           <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Trending Mobile Games</h2>
           {games.length === 0 ? (
             <div className="rounded-xl border border-border bg-white py-16 text-center shadow-sm">
@@ -184,33 +212,6 @@ export default async function MobilePage({
           )}
         </section>
 
-        {/* Latest Mobile News */}
-        <section>
-          <h2 className="mb-5 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider">Latest Mobile News</h2>
-          {articles.length === 0 ? (
-            <div className="rounded-xl border border-border bg-white py-16 text-center shadow-sm">
-              <p className="text-text-muted">
-                No mobile articles found yet.
-              </p>
-            </div>
-          ) : (
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {articles.map((article) => (
-                <NewsCard
-                  key={article.id}
-                  slug={article.slug}
-                  title={article.title}
-                  summary={article.summary}
-                  imageUrl={article.imageUrl}
-                  category={article.category}
-                  sourceName={article.sourceName}
-                  publishedAt={article.publishedAt}
-                  createdAt={article.createdAt}
-                />
-              ))}
-            </div>
-          )}
-        </section>
       </main>
       <Footer />
     </>
