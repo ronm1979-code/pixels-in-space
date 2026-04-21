@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroCarousel } from "@/components/news/HeroCarousel";
 import { NewsCard } from "@/components/news/NewsCard";
 import { ReviewCard } from "@/components/reviews/ReviewCard";
+import { FeaturedReviewHero } from "@/components/reviews/FeaturedReviewHero";
 import { GameCard } from "@/components/games/GameCard";
 import { TrendingMarquee } from "@/components/ui/TrendingMarquee";
 import { ChevronRight } from "lucide-react";
@@ -59,20 +60,40 @@ export default async function HomePage() {
       isReview: false,
     }));
 
-  const carouselArticles = [...articleCarouselItems, ...reviewCarouselItems]
+  // Carousel now shows only news articles — reviews get their own featured slot
+  const carouselArticles = articleCarouselItems
     .sort((a, b) => new Date(b.publishedAt ?? b.createdAt).getTime() - new Date(a.publishedAt ?? a.createdAt).getTime())
     .slice(0, 6);
 
   const gridArticles = latestArticles.slice(0, 9);
 
+  // Pick the newest review with a cover image for the featured hero
+  const featuredReview = latestReviews.find((r) => r.game.coverImage);
+
   return (
     <>
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
-        {/* Hero Carousel */}
+        {/* Top: Carousel (60%) + Featured Review (40%) */}
         {carouselArticles.length > 0 ? (
           <section className="mb-10">
-            <HeroCarousel articles={carouselArticles} />
+            <div className="grid gap-5 lg:grid-cols-5">
+              <div className="lg:col-span-3">
+                <HeroCarousel articles={carouselArticles} />
+              </div>
+              {featuredReview && (
+                <div className="lg:col-span-2">
+                  <FeaturedReviewHero
+                    slug={featuredReview.slug}
+                    gameTitle={featuredReview.game.title}
+                    verdict={featuredReview.verdict}
+                    score={featuredReview.score}
+                    coverImage={featuredReview.game.coverImage}
+                    publishedAt={featuredReview.publishedAt}
+                  />
+                </div>
+              )}
+            </div>
           </section>
         ) : (
           <section className="mb-10">
