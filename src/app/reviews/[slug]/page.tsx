@@ -194,14 +194,9 @@ export default async function ReviewPage({
           return (
             <section className="border-t border-[rgba(139,92,246,0.18)] pt-8">
               <div className="dark-card flex items-center justify-between rounded-xl p-5">
-                <div>
-                  <p className="font-[family-name:var(--font-gaming)] text-xs font-semibold uppercase tracking-[0.2em] text-[#22d3ee]">
-                    Global Average
-                  </p>
-                  <p className="mt-1 text-sm text-slate-400">
-                    Aggregated from {sourceReviews.length} critic{sourceReviews.length > 1 ? "s" : ""}
-                  </p>
-                </div>
+                <p className="font-[family-name:var(--font-gaming)] text-xs font-semibold uppercase tracking-[0.2em] text-[#22d3ee]">
+                  Global Average
+                </p>
                 <ScoreBadge score={avg} size="lg" />
               </div>
             </section>
