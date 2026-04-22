@@ -182,7 +182,8 @@ export default async function RankingsPage({
                           alt={game.title}
                           fill
                           className="object-cover"
-                          sizes="96px"
+                          sizes="(max-width: 640px) 160px, 192px"
+                          quality={90}
                         />
                       )}
                     </div>
