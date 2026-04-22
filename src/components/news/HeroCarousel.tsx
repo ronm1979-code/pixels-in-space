@@ -70,8 +70,8 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
           </div>
         ))}
 
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+        {/* Gradient overlay — stronger at bottom for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-black/15" />
 
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-10">
@@ -82,7 +82,10 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
             <Badge variant={article.category} className="mb-3">
               {article.category}
             </Badge>
-            <h2 className="mb-2 max-w-3xl font-[family-name:var(--font-gaming)] text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl lg:text-4xl">
+            <h2
+              className="mb-2 max-w-3xl font-[family-name:var(--font-gaming)] text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl lg:text-4xl"
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8)" }}
+            >
               {article.title}
             </h2>
             {article.summary && (
