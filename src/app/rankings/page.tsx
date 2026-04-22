@@ -1,16 +1,15 @@
 import { prisma } from "@/lib/prisma";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Sidebar } from "@/components/sidebar/Sidebar";
 import { ScoreBadge } from "@/components/ui/ScoreBadge";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rankings",
+  title: "Global Rankings",
   description:
-    "Game rankings by aggregated critic scores. See the top-rated games of every era.",
+    "Global game rankings by aggregated critic scores. See the top-rated games of every era.",
 };
 export const dynamic = "force-dynamic";
 
@@ -87,7 +86,7 @@ export default async function RankingsPage({
         <div className="absolute inset-0 bg-gradient-to-b from-[#07031a]/70 to-[#07031a]" />
         <div className="relative mx-auto max-w-[1500px] px-5 pb-12 pt-10 lg:px-10">
           <h1 className="font-[family-name:var(--font-gaming)] text-3xl font-black uppercase tracking-wider text-white">
-            Rankings
+            Global Rankings
           </h1>
           <p className="mt-1 text-slate-400">
             The top-rated games by aggregated critic scores
@@ -95,8 +94,7 @@ export default async function RankingsPage({
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-8 px-5 py-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:px-10">
-        <main className="min-w-0">
+      <main className="mx-auto max-w-[1500px] px-5 py-6 lg:px-10">
           {/* Filters */}
           <div className="mb-6 flex flex-wrap items-center gap-3">
             <FilterGroup label="Year">
@@ -214,9 +212,7 @@ export default async function RankingsPage({
               ) : <span />}
             </div>
           )}
-        </main>
-        <Sidebar />
-      </div>
+      </main>
       <Footer />
     </>
   );
