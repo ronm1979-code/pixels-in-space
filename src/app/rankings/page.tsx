@@ -25,15 +25,18 @@ export default async function RankingsPage({
   const year = params.year?.trim();
   const platform = params.platform?.trim();
 
-  // Build filter (only reviewed games)
+  // Include all games with either our aggregated score OR a Metacritic score.
+  // Games without our review still rank (using Metacritic) but link out to
+  // Google search instead of an empty internal page.
   const where: {
-    averageScore: { not: null };
-    reviews: { some: { status: "published" } };
+    OR: ({ averageScore: { not: null } } | { metacriticScore: { not: null } })[];
     releaseDate?: { gte: Date; lte: Date };
     platforms?: { contains: string };
   } = {
-    averageScore: { not: null },
-    reviews: { some: { status: "published" } },
+    OR: [
+      { averageScore: { not: null } },
+      { metacriticScore: { not: null } },
+    ],
   };
 
   if (year) {
@@ -50,25 +53,33 @@ export default async function RankingsPage({
     where.platforms = { contains: `"${platform}"` };
   }
 
-  const [games, total] = await Promise.all([
-    prisma.game.findMany({
-      where,
-      orderBy: { averageScore: "desc" },
-      skip: (page - 1) * PAGE_SIZE,
-      take: PAGE_SIZE,
-      select: {
-        id: true,
-        slug: true,
-        title: true,
-        coverImage: true,
-        platforms: true,
-        releaseDate: true,
-        averageScore: true,
-        reviews: { select: { slug: true }, take: 1 },
-      },
-    }),
-    prisma.game.count({ where }),
-  ]);
+  // Prisma can't COALESCE in orderBy, so we fetch all qualifying games and
+  // sort/paginate in JS. Reasonable while the catalog is in the low thousands.
+  const allGames = await prisma.game.findMany({
+    where,
+    select: {
+      id: true,
+      slug: true,
+      title: true,
+      coverImage: true,
+      platforms: true,
+      releaseDate: true,
+      averageScore: true,
+      metacriticScore: true,
+      reviews: { select: { slug: true }, take: 1 },
+    },
+  });
+
+  // Effective score = our aggregated score (when we have a review) or Metacritic
+  const sorted = allGames
+    .map((g) => ({
+      ...g,
+      effectiveScore: g.averageScore ?? g.metacriticScore ?? 0,
+    }))
+    .sort((a, b) => b.effectiveScore - a.effectiveScore);
+
+  const total = sorted.length;
+  const games = sorted.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   const totalPages = Math.ceil(total / PAGE_SIZE);
   const startRank = (page - 1) * PAGE_SIZE + 1;
@@ -138,11 +149,17 @@ export default async function RankingsPage({
                 const platformList = (JSON.parse(game.platforms || "[]") as string[]).slice(0, 3);
                 const year = game.releaseDate ? new Date(game.releaseDate).getFullYear() : null;
                 const reviewSlug = game.reviews[0]?.slug;
+                const href = reviewSlug
+                  ? `/reviews/${reviewSlug}`
+                  : `https://www.google.com/search?q=${encodeURIComponent(`${game.title} game review`)}`;
+                const external = !reviewSlug;
 
                 return (
                   <Link
                     key={game.id}
-                    href={reviewSlug ? `/reviews/${reviewSlug}` : `/games/${game.slug}`}
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
                     className="group flex items-center gap-4 border-b border-[rgba(139,92,246,0.1)] px-4 py-3 transition-colors last:border-b-0 hover:bg-purple-500/5"
                   >
                     <span
@@ -180,7 +197,7 @@ export default async function RankingsPage({
                       </p>
                     </div>
                     <div className="flex-shrink-0">
-                      <ScoreBadge score={game.averageScore!} size="md" />
+                      <ScoreBadge score={game.effectiveScore} size="md" />
                     </div>
                   </Link>
                 );
