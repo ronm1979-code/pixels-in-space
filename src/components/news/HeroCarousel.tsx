@@ -83,7 +83,7 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
               {article.category}
             </Badge>
             <h2
-              className="mb-2 max-w-3xl font-[family-name:var(--font-gaming)] text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl lg:text-4xl"
+              className="mb-2 max-w-3xl font-[family-name:var(--font-gaming)] text-[16px] font-bold leading-tight text-white sm:text-[22px] md:text-[27px] lg:text-[32px]"
               style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8)" }}
             >
               {article.title}

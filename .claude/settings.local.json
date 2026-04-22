@@ -809,7 +809,9 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_943bf6fe62352757d9070c1d33e50b92fe8539f1.1920x1080.jpg?t=1767883716\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3681010/c65877619b70c51d6be030c20b5c37bcfaf2e248/ss_c65877619b70c51d6be030c20b5c37bcfaf2e248.1920x1080.jpg?t=1772090941\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://i.ytimg.com/vi/Io1ZL0rc2Ac/maxresdefault.jpg\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://i.ytimg.com/vi/1CsYr5lLnjA/maxresdefault.jpg\")"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://i.ytimg.com/vi/1CsYr5lLnjA/maxresdefault.jpg\")",
+      "Bash(curl -s -X POST https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline -H 'Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ' -H 'Content-Type: application/json' -d '{\"requests\":[{\"type\":\"execute\",\"stmt\":{\"sql\":\"SELECT content FROM Article WHERE slug = '\\\\''pragmata-one-million-copies-sold-two-days-capcom-new-ip-april-2026'\\\\'' LIMIT 1\"}}]}')",
+      "WebFetch(domain:www.tweaktown.com)"
     ]
   }
 }
