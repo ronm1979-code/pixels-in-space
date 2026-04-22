@@ -6,6 +6,7 @@ import {
   linkArticleToGame,
   generateArticleSlug,
 } from "./processors/categorizer";
+import { refreshLatestReviewScores } from "./generators/review-aggregator";
 import { createSlug } from "@/lib/utils";
 import { PIPELINE_CONFIG } from "@/config/pipeline";
 import type { CollectedArticle, PipelineResult } from "@/types";
@@ -79,6 +80,17 @@ export async function runCollectionPipeline(): Promise<PipelineResult> {
         `[Store] ${article.title}: ${err instanceof Error ? err.message : String(err)}`
       );
     }
+  }
+
+  // Refresh critic scores on the 5 latest reviews (Metacritic only, no user
+  // reviews). Non-fatal — log errors but don't fail the whole run.
+  try {
+    const refresh = await refreshLatestReviewScores();
+    if (refresh.errors.length) errors.push(...refresh.errors.map((e) => `[ScoreRefresh] ${e}`));
+  } catch (err) {
+    errors.push(
+      `[ScoreRefresh] ${err instanceof Error ? err.message : String(err)}`
+    );
   }
 
   await prisma.pipelineRun.update({
