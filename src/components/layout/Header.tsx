@@ -7,9 +7,9 @@ import { NavLink } from "./NavLink";
 const NAV_LINKS = [
   { href: "/news", label: "News" },
   { href: "/reviews", label: "Reviews" },
-  { href: "/rankings", label: "Global Rankings" },
   { href: "/games", label: "Games" },
   { href: "/mobile", label: "Mobile" },
+  { href: "/rankings", label: "Global Rankings" },
 ];
 
 export function Header() {
