@@ -186,23 +186,27 @@ export default async function ReviewPage({
         {/* Comments */}
         <Comments reviewId={review.id} />
 
-        {/* Source scores */}
-        {sourceReviews.length > 0 && (
-          <section className="border-t border-[rgba(139,92,246,0.18)] pt-8">
-            <h2 className="mb-4 font-[family-name:var(--font-gaming)] text-lg font-bold uppercase tracking-wider text-white">Score Breakdown</h2>
-            <div className="grid gap-3">
-              {sourceReviews.map((sr, i) => (
-                <div
-                  key={i}
-                  className="dark-card flex items-center justify-between rounded-lg px-4 py-3"
-                >
-                  <span className="text-sm font-medium text-slate-300">{sr.source}</span>
-                  <ScoreBadge score={sr.score} size="sm" />
+        {/* Global average score */}
+        {sourceReviews.length > 0 && (() => {
+          const avg = Math.round(
+            sourceReviews.reduce((s, r) => s + r.score, 0) / sourceReviews.length
+          );
+          return (
+            <section className="border-t border-[rgba(139,92,246,0.18)] pt-8">
+              <div className="dark-card flex items-center justify-between rounded-xl p-5">
+                <div>
+                  <p className="font-[family-name:var(--font-gaming)] text-xs font-semibold uppercase tracking-[0.2em] text-[#22d3ee]">
+                    Global Average
+                  </p>
+                  <p className="mt-1 text-sm text-slate-400">
+                    Aggregated from {sourceReviews.length} critic{sourceReviews.length > 1 ? "s" : ""}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </section>
-        )}
+                <ScoreBadge score={avg} size="lg" />
+              </div>
+            </section>
+          );
+        })()}
       </main>
       <Footer />
     </>
