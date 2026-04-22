@@ -12,18 +12,16 @@ interface FeaturedReviewHeroProps {
 }
 
 function getScoreColor(score: number) {
-  if (score >= 85) return "from-emerald-400 to-green-500";
-  if (score >= 70) return "from-yellow-400 to-amber-500";
-  if (score >= 50) return "from-orange-400 to-red-500";
+  if (score >= 90) return "from-emerald-400 to-green-500";
+  if (score >= 80) return "from-yellow-400 to-amber-500";
+  if (score >= 60) return "from-orange-400 to-orange-500";
   return "from-red-500 to-rose-600";
 }
 
 function getScoreLabel(score: number) {
   if (score >= 90) return "Masterpiece";
   if (score >= 80) return "Excellent";
-  if (score >= 70) return "Great";
   if (score >= 60) return "Good";
-  if (score >= 50) return "Mixed";
   return "Poor";
 }
 

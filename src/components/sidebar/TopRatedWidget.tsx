@@ -23,7 +23,12 @@ export function TopRatedWidget({ games }: { games: Game[] }) {
         {games.slice(0, 5).map((game, i) => {
           const platformList = (JSON.parse(game.platforms || "[]") as string[]).slice(0, 2);
           const score = game.averageScore ? Math.round(game.averageScore) : null;
-          const scoreClass = score && score >= 85 ? "score-a" : "score-b";
+          const scoreClass =
+            score == null ? "" :
+            score >= 90 ? "score-a" :
+            score >= 80 ? "score-b" :
+            score >= 60 ? "score-c" :
+            "score-d";
           const rankClass = i === 0 ? "rank-first" : i === 1 ? "rank-second" : i === 2 ? "rank-third" : "";
 
           return (
