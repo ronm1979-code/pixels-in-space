@@ -74,13 +74,13 @@ export default function AdminReviews() {
       </div>
 
       {loading ? (
-        <p className="text-text-secondary">Loading...</p>
+        <p className="text-slate-300">Loading...</p>
       ) : reviews.length === 0 ? (
-        <p className="text-text-secondary">No reviews found.</p>
+        <p className="text-slate-300">No reviews found.</p>
       ) : (
-        <div className="overflow-hidden rounded-xl border border-border">
+        <div className="overflow-hidden rounded-xl border border-[rgba(139,92,246,0.18)]">
           <table className="w-full text-sm">
-            <thead className="bg-bg-surface text-text-muted">
+            <thead className="bg-[rgba(7,3,26,0.4)] text-slate-400">
               <tr>
                 <th className="px-4 py-3 text-left">
                   <input
@@ -101,7 +101,7 @@ export default function AdminReviews() {
             </thead>
             <tbody>
               {reviews.map((review) => (
-                <tr key={review.id} className="border-t border-border">
+                <tr key={review.id} className="border-t border-[rgba(139,92,246,0.18)]">
                   <td className="px-4 py-3">
                     <input
                       type="checkbox"

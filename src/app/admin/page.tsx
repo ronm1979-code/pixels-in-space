@@ -25,7 +25,9 @@ export default async function AdminDashboard() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold">Dashboard</h1>
+      <h1 className="mb-6 font-[family-name:var(--font-gaming)] text-2xl font-black uppercase tracking-wider text-white">
+        Dashboard
+      </h1>
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
@@ -53,13 +55,15 @@ export default async function AdminDashboard() {
         />
       </div>
 
-      <h2 className="mb-4 text-xl font-bold">Recent Pipeline Runs</h2>
+      <h2 className="mb-4 font-[family-name:var(--font-gaming)] text-xl font-black uppercase tracking-wider text-white">
+        Recent Pipeline Runs
+      </h2>
       {recentRuns.length === 0 ? (
-        <p className="text-text-secondary">No pipeline runs yet.</p>
+        <p className="text-slate-400">No pipeline runs yet.</p>
       ) : (
-        <div className="overflow-hidden rounded-xl border border-border">
+        <div className="dark-card overflow-hidden rounded-xl">
           <table className="w-full text-sm">
-            <thead className="bg-gray-100 text-text-muted">
+            <thead className="bg-[rgba(7,3,26,0.4)] font-[family-name:var(--font-gaming)] text-[10px] uppercase tracking-wider text-slate-500">
               <tr>
                 <th className="px-4 py-3 text-left">Type</th>
                 <th className="px-4 py-3 text-left">Status</th>
@@ -70,26 +74,26 @@ export default async function AdminDashboard() {
             </thead>
             <tbody>
               {recentRuns.map((run) => (
-                <tr key={run.id} className="border-t border-border">
-                  <td className="px-4 py-3 font-medium">{run.type}</td>
+                <tr key={run.id} className="border-t border-[rgba(139,92,246,0.1)]">
+                  <td className="px-4 py-3 font-medium text-slate-200">{run.type}</td>
                   <td className="px-4 py-3">
                     <span
                       className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${
                         run.status === "completed"
-                          ? "bg-green-500/20 text-green-400"
+                          ? "bg-emerald-500/20 text-emerald-300"
                           : run.status === "running"
-                            ? "bg-blue-500/20 text-blue-400"
-                            : "bg-red-500/20 text-red-400"
+                            ? "bg-blue-500/20 text-blue-300"
+                            : "bg-red-500/20 text-red-300"
                       }`}
                     >
                       {run.status}
                     </span>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="px-4 py-3 text-slate-300">
                     {run.articlesNew}/{run.articlesFound}
                   </td>
-                  <td className="px-4 py-3">{run.reviewsGenerated}</td>
-                  <td className="px-4 py-3 text-text-muted">
+                  <td className="px-4 py-3 text-slate-300">{run.reviewsGenerated}</td>
+                  <td className="px-4 py-3 text-slate-500">
                     {run.startedAt.toLocaleString()}
                   </td>
                 </tr>
@@ -114,13 +118,13 @@ function StatCard({
   sub?: string;
 }) {
   return (
-    <div className="rounded-xl border border-border bg-white p-5">
-      <div className="mb-2 flex items-center gap-2 text-text-muted">
+    <div className="dark-card rounded-xl p-5">
+      <div className="mb-2 flex items-center gap-2 text-slate-400">
         {icon}
         <span className="text-sm">{label}</span>
       </div>
-      <p className="text-3xl font-bold">{value}</p>
-      {sub && <p className="mt-1 text-sm text-text-muted">{sub}</p>}
+      <p className="font-[family-name:var(--font-gaming)] text-3xl font-black text-white">{value}</p>
+      {sub && <p className="mt-1 text-sm text-slate-500">{sub}</p>}
     </div>
   );
 }

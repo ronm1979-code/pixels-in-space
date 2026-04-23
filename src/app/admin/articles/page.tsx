@@ -107,7 +107,7 @@ export default function AdminArticles() {
             className={`rounded-lg px-3 py-1.5 text-sm ${
               statusFilter === s
                 ? "bg-primary text-white"
-                : "bg-bg-card text-text-secondary hover:bg-bg-card-hover"
+                : "bg-[rgba(26,10,58,0.55)] text-slate-300 hover:bg-[rgba(38,16,82,0.75)]"
             }`}
           >
             {s || "All"}
@@ -116,13 +116,13 @@ export default function AdminArticles() {
       </div>
 
       {loading ? (
-        <p className="text-text-secondary">Loading...</p>
+        <p className="text-slate-300">Loading...</p>
       ) : articles.length === 0 ? (
-        <p className="text-text-secondary">No articles found.</p>
+        <p className="text-slate-300">No articles found.</p>
       ) : (
-        <div className="overflow-hidden rounded-xl border border-border">
+        <div className="overflow-hidden rounded-xl border border-[rgba(139,92,246,0.18)]">
           <table className="w-full text-sm">
-            <thead className="bg-bg-surface text-text-muted">
+            <thead className="bg-[rgba(7,3,26,0.4)] text-slate-400">
               <tr>
                 <th className="px-4 py-3 text-left">
                   <input
@@ -140,7 +140,7 @@ export default function AdminArticles() {
             </thead>
             <tbody>
               {articles.map((article) => (
-                <tr key={article.id} className="border-t border-border">
+                <tr key={article.id} className="border-t border-[rgba(139,92,246,0.18)]">
                   <td className="px-4 py-3">
                     <input
                       type="checkbox"
@@ -154,13 +154,13 @@ export default function AdminArticles() {
                   <td className="px-4 py-3">
                     <Badge variant={article.category}>{article.category}</Badge>
                   </td>
-                  <td className="px-4 py-3 text-text-muted">
+                  <td className="px-4 py-3 text-slate-400">
                     {article.sourceName ?? "-"}
                   </td>
                   <td className="px-4 py-3">
                     <Badge variant={article.status}>{article.status}</Badge>
                   </td>
-                  <td className="px-4 py-3 text-text-muted">
+                  <td className="px-4 py-3 text-slate-400">
                     {formatDate(article.createdAt)}
                   </td>
                 </tr>
@@ -174,17 +174,17 @@ export default function AdminArticles() {
         <button
           disabled={page <= 1}
           onClick={() => setPage(page - 1)}
-          className="rounded-lg bg-bg-card px-3 py-1.5 text-sm disabled:opacity-50"
+          className="rounded-lg bg-[rgba(26,10,58,0.55)] px-3 py-1.5 text-sm disabled:opacity-50"
         >
           Previous
         </button>
-        <span className="px-3 py-1.5 text-sm text-text-muted">
+        <span className="px-3 py-1.5 text-sm text-slate-400">
           Page {page}
         </span>
         <button
           disabled={articles.length < 20}
           onClick={() => setPage(page + 1)}
-          className="rounded-lg bg-bg-card px-3 py-1.5 text-sm disabled:opacity-50"
+          className="rounded-lg bg-[rgba(26,10,58,0.55)] px-3 py-1.5 text-sm disabled:opacity-50"
         >
           Next
         </button>

@@ -56,7 +56,7 @@ export default function AdminPipeline() {
       <h1 className="mb-6 text-2xl font-bold">Pipeline</h1>
 
       {stats && (
-        <div className="mb-6 flex gap-4 text-sm text-text-secondary">
+        <div className="mb-6 flex gap-4 text-sm text-slate-300">
           <span>Articles: {stats.articles}</span>
           <span>Reviews: {stats.reviews}</span>
           <span>Games: {stats.games}</span>
@@ -86,7 +86,7 @@ export default function AdminPipeline() {
 
       <h2 className="mb-4 text-xl font-bold">Run History</h2>
       {runs.length === 0 ? (
-        <p className="text-text-secondary">No runs yet.</p>
+        <p className="text-slate-300">No runs yet.</p>
       ) : (
         <div className="space-y-4">
           {runs.map((run) => {
@@ -94,7 +94,7 @@ export default function AdminPipeline() {
             return (
               <div
                 key={run.id}
-                className="rounded-xl border border-border bg-bg-card p-4"
+                className="rounded-xl border border-[rgba(139,92,246,0.18)] bg-[rgba(26,10,58,0.55)] p-4"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -111,11 +111,11 @@ export default function AdminPipeline() {
                       {run.status}
                     </span>
                   </div>
-                  <span className="text-sm text-text-muted">
+                  <span className="text-sm text-slate-400">
                     {new Date(run.startedAt).toLocaleString()}
                   </span>
                 </div>
-                <div className="mt-2 flex gap-4 text-sm text-text-secondary">
+                <div className="mt-2 flex gap-4 text-sm text-slate-300">
                   <span>
                     Articles: {run.articlesNew}/{run.articlesFound}
                   </span>
