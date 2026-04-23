@@ -858,7 +858,23 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" -I \"https://i.ytimg.com/vi/Wbd-7QTnHyY/maxresdefault.jpg\")",
       "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d \"{\\\\\"requests\\\\\":[{\\\\\"type\\\\\":\\\\\"execute\\\\\",\\\\\"stmt\\\\\":{\\\\\"sql\\\\\":\\\\\"SELECT DISTINCT category FROM Article LIMIT 10\\\\\"}}]}\")",
       "WebFetch(domain:pixels-in-space.com)",
-      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d \"{\\\\\"requests\\\\\":[{\\\\\"type\\\\\":\\\\\"execute\\\\\",\\\\\"stmt\\\\\":{\\\\\"sql\\\\\":\\\\\"SELECT slug, title, imageUrl, publishedAt FROM Article WHERE publishedAt LIKE '2026-04-23%' ORDER BY publishedAt DESC LIMIT 6\\\\\"}}]}\")"
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d \"{\\\\\"requests\\\\\":[{\\\\\"type\\\\\":\\\\\"execute\\\\\",\\\\\"stmt\\\\\":{\\\\\"sql\\\\\":\\\\\"SELECT slug, title, imageUrl, publishedAt FROM Article WHERE publishedAt LIKE '2026-04-23%' ORDER BY publishedAt DESC LIMIT 6\\\\\"}}]}\")",
+      "Bash(curl -s -X POST \"https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline\" -H \"Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ\" -H \"Content-Type: application/json\" -d \"{\\\\\"requests\\\\\":[{\\\\\"type\\\\\":\\\\\"execute\\\\\",\\\\\"stmt\\\\\":{\\\\\"sql\\\\\":\\\\\"SELECT slug, title FROM Review WHERE slug LIKE '%mouse%'\\\\\"}}]}\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP: %{http_code}\\\\n\" \"https://www.youtube.com/watch?v=Wbd-7QTnHyY\")",
+      "Bash(curl -s -o /dev/null -w \"Thumbnail HTTP: %{http_code}\\\\n\" \"https://i.ytimg.com/vi/Wbd-7QTnHyY/maxresdefault.jpg\")",
+      "Bash(curl -s \"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=Wbd-7QTnHyY&format=json\")",
+      "Bash(curl -s -H \"User-Agent: Mozilla/5.0\" \"https://www.youtube.com/embed/Wbd-7QTnHyY\")",
+      "Bash(curl -s \"https://www.googleapis.com/youtube/v3/videos?part=status&id=Wbd-7QTnHyY\" -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36' https://www.youtube.com/embed/__TRACKED_VAR__)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' https://i.ytimg.com/vi/__TRACKED_VAR__/maxresdefault.jpg)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' 'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=__TRACKED_VAR__&format=json')",
+      "Bash(curl -s -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36' https://www.youtube.com/embed/__TRACKED_VAR__ -o /tmp/ytcheck.html)",
+      "Bash(curl -s -H \"User-Agent: Mozilla/5.0\" \"https://www.youtube.com/embed/Wbd-7QTnHyY\" -o /tmp/ytcheck.html)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://www.youtube.com/embed/Wbd-7QTnHyY\" -o /tmp/fifa_embed.html)",
+      "Bash(curl -s -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0\" \"https://www.youtube.com/embed/Wbd-7QTnHyY\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://i.ytimg.com/vi/LXknLr5Hnng/maxresdefault.jpg\")",
+      "Bash(curl -s \"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=LXknLr5Hnng&format=json\")"
     ]
   }
 }

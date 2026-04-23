@@ -133,3 +133,16 @@ model Setting {
   value     String
   updatedAt DateTime @updatedAt
 }
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  category  String   @default("general") // general | press | advertising | tip
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([read, createdAt])
+}
