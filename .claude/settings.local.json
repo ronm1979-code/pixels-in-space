@@ -876,7 +876,8 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://i.ytimg.com/vi/LXknLr5Hnng/maxresdefault.jpg\")",
       "Bash(curl -s \"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=LXknLr5Hnng&format=json\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://pixels-in-space.vercel.app/admin/messages)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -u admin:055443314 https://pixels-in-space.vercel.app/admin/messages)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -u admin:055443314 https://pixels-in-space.vercel.app/admin/messages)",
+      "Bash(curl -sv -u admin:055443314 https://pixels-in-space.vercel.app/admin/messages)"
     ]
   }
 }

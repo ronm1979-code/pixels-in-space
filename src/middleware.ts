@@ -3,7 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 // Basic Auth guard for admin routes.
 // Expects ADMIN_PASSWORD env var. Username is always "admin".
 export function middleware(req: NextRequest) {
-  const password = process.env.ADMIN_PASSWORD;
+  // Trim — `echo x | vercel env add` stores a trailing newline.
+  const password = process.env.ADMIN_PASSWORD?.trim();
   if (!password) {
     // If env var not set, block entirely so we don't accidentally expose admin.
     return new NextResponse("Admin password not configured", { status: 503 });
