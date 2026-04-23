@@ -61,8 +61,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Pixels in Space. All rights reserved.
           </p>
           <div className="flex gap-4 text-xs text-slate-500">
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
+            <Link href="/privacy" className="transition-colors hover:text-purple-300">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-purple-300">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
