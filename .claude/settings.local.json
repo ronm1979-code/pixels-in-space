@@ -874,7 +874,9 @@
       "Bash(curl -s -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://www.youtube.com/embed/Wbd-7QTnHyY\" -o /tmp/fifa_embed.html)",
       "Bash(curl -s -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0\" \"https://www.youtube.com/embed/Wbd-7QTnHyY\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://i.ytimg.com/vi/LXknLr5Hnng/maxresdefault.jpg\")",
-      "Bash(curl -s \"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=LXknLr5Hnng&format=json\")"
+      "Bash(curl -s \"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=LXknLr5Hnng&format=json\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://pixels-in-space.vercel.app/admin/messages)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -u admin:055443314 https://pixels-in-space.vercel.app/admin/messages)"
     ]
   }
 }

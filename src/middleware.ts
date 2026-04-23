@@ -13,8 +13,11 @@ export function middleware(req: NextRequest) {
   if (authHeader) {
     const [scheme, encoded] = authHeader.split(" ");
     if (scheme === "Basic" && encoded) {
-      const decoded = Buffer.from(encoded, "base64").toString();
-      const [user, pass] = decoded.split(":");
+      // atob is Edge-runtime-safe; Buffer.from is not.
+      const decoded = atob(encoded);
+      const sep = decoded.indexOf(":");
+      const user = decoded.slice(0, sep);
+      const pass = decoded.slice(sep + 1);
       if (user === "admin" && pass === password) {
         return NextResponse.next();
       }
