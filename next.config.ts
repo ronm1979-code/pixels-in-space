@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.launchbox-app.com" },
       { protocol: "https", hostname: "worthplaying.com" },
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
+      { protocol: "https", hostname: "cms-assets.xboxservices.com" },
     ],
   },
 };
