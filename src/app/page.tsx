@@ -74,7 +74,7 @@ export default async function HomePage() {
   return (
     <>
       <Header />
-      <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-8 px-5 py-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:px-10">
+      <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-8 px-5 py-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:px-10">
       <main className="min-w-0">
         {/* Hero Carousel */}
         {carouselArticles.length > 0 ? (

@@ -42,7 +42,7 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-2xl shadow-lg"
+      className="group relative overflow-hidden rounded-2xl shadow-lg lg:!h-[400px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
