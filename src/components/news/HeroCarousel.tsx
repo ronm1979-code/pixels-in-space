@@ -42,12 +42,12 @@ export function HeroCarousel({ articles }: { articles: HeroArticle[] }) {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-2xl shadow-lg lg:!h-[400px]"
+      className="group relative overflow-hidden rounded-2xl shadow-lg lg:h-[400px]!"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       {/* Background image */}
-      <div className="relative aspect-[4/3] bg-gray-900 sm:aspect-[21/7.6] sm:min-h-[385px] lg:!aspect-auto lg:!h-[400px] lg:max-h-[400px] lg:min-h-[400px]">
+      <div className="relative aspect-[4/3] bg-gray-900 sm:aspect-[21/7.6] sm:min-h-[385px] lg:aspect-auto! lg:h-[400px]! lg:max-h-[400px] lg:min-h-[400px]">
         {articles.map((a, i) => (
           <div
             key={a.slug}
