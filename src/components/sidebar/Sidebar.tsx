@@ -2,8 +2,22 @@ import { prisma } from "@/lib/prisma";
 import { TopRatedWidget } from "./TopRatedWidget";
 import { UpcomingWidget } from "./UpcomingWidget";
 import { TagsWidget } from "./TagsWidget";
+import { FeaturedReviewHero } from "@/components/reviews/FeaturedReviewHero";
 
-export async function Sidebar() {
+interface FeaturedReviewProps {
+  slug: string;
+  gameTitle: string;
+  verdict: string | null;
+  score: number;
+  coverImage: string | null;
+  publishedAt: Date | string | null;
+}
+
+export async function Sidebar({
+  featuredReview = null,
+}: {
+  featuredReview?: FeaturedReviewProps | null;
+} = {}) {
   const now = new Date();
 
   const [topRated, upcoming] = await Promise.all([
@@ -28,6 +42,7 @@ export async function Sidebar() {
 
   return (
     <aside className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
+      {featuredReview && <FeaturedReviewHero {...featuredReview} />}
       <TopRatedWidget games={topRated} />
       <UpcomingWidget releases={upcoming} />
       <TagsWidget />

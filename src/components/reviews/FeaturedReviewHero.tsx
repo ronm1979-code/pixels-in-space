@@ -40,8 +40,8 @@ export function FeaturedReviewHero({
       href={`/reviews/${slug}`}
       className="group relative block overflow-hidden rounded-2xl border border-purple-500/20 bg-gray-950 shadow-lg"
     >
-      {/* Background image */}
-      <div className="relative aspect-[16/9] w-full min-h-[216px] sm:aspect-[16/3.24] sm:min-h-[130px]">
+      {/* Background image — portrait aspect for sidebar column */}
+      <div className="relative aspect-[4/5] w-full">
         {coverImage && (
           <Image
             src={coverImage}
@@ -49,54 +49,53 @@ export function FeaturedReviewHero({
             fill
             priority
             className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1200px) 100vw, 1200px"
+            sizes="340px"
             quality={90}
           />
         )}
         {/* Dark gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/60 to-gray-950/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-gray-950/20" />
         {/* Purple + cyan glow accents */}
-        <div className="absolute -left-20 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full bg-purple-600/25 blur-3xl" />
+        <div className="absolute -bottom-20 left-1/2 h-60 w-60 -translate-x-1/2 rounded-full bg-purple-600/30 blur-3xl" />
         <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-500/15 blur-3xl" />
       </div>
 
       {/* Top-left: Featured badge */}
-      <div className="absolute left-4 top-4 z-10 md:left-6 md:top-5">
-        <div className="flex items-center gap-1.5 rounded-full border border-purple-400/40 bg-purple-500/20 px-3 py-1 backdrop-blur-md">
-          <Star className="h-3 w-3 fill-purple-300 text-purple-300" />
-          <span className="font-[family-name:var(--font-gaming)] text-[10px] font-bold uppercase tracking-widest text-purple-200">
+      <div className="absolute left-3 top-3 z-10">
+        <div className="flex items-center gap-1.5 rounded-full border border-purple-400/40 bg-purple-500/20 px-2.5 py-1 backdrop-blur-md">
+          <Star className="h-2.5 w-2.5 fill-purple-300 text-purple-300" />
+          <span className="font-[family-name:var(--font-gaming)] text-[9px] font-bold uppercase tracking-widest text-purple-200">
             Featured Review
           </span>
         </div>
       </div>
 
       {/* Top-right: Score badge */}
-      <div className="absolute right-4 top-4 z-10 flex flex-col items-center md:right-6 md:top-5">
-        <div className={`relative flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${scoreColor} shadow-2xl md:h-20 md:w-20`}>
+      <div className="absolute right-3 top-3 z-10 flex flex-col items-center">
+        <div className={`relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${scoreColor} shadow-2xl`}>
           <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${scoreColor} blur-lg opacity-60`} />
-          <span className="relative font-[family-name:var(--font-gaming)] text-2xl font-black text-white drop-shadow-lg md:text-3xl">
+          <span className="relative font-[family-name:var(--font-gaming)] text-xl font-black text-white drop-shadow-lg">
             {Math.round(score)}
           </span>
         </div>
-        <span className="mt-1 font-[family-name:var(--font-gaming)] text-[9px] font-bold uppercase tracking-widest text-white drop-shadow-md md:text-[10px]">
+        <span className="mt-1 font-[family-name:var(--font-gaming)] text-[9px] font-bold uppercase tracking-widest text-white drop-shadow-md">
           {scoreLabel}
         </span>
       </div>
 
-      {/* Bottom-left: Title + verdict + CTA */}
-      <div className="absolute bottom-0 left-0 right-28 z-10 p-4 md:right-32 md:p-6">
-        <h2 className="font-[family-name:var(--font-gaming)] text-xl font-bold uppercase leading-tight tracking-tight text-white drop-shadow-lg md:text-3xl">
+      {/* Bottom: Title + verdict + CTA (full-width, stacked) */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 p-4">
+        <h2 className="font-[family-name:var(--font-gaming)] text-xl font-bold uppercase leading-tight tracking-tight text-white drop-shadow-lg">
           {gameTitle}
         </h2>
         {verdict && (
-          <p className="mt-2 line-clamp-2 text-xs text-white/80 md:text-sm">
+          <p className="mt-2 line-clamp-3 text-xs text-white/80">
             &ldquo;{verdict}&rdquo;
           </p>
         )}
-        <div className="mt-3 inline-flex items-center gap-1.5 rounded-md bg-white/10 px-3 py-1.5 font-[family-name:var(--font-gaming)] text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-all group-hover:bg-white/20 group-hover:gap-2.5 md:text-xs">
+        <div className="mt-3 inline-flex items-center gap-1.5 rounded-md bg-white/10 px-3 py-1.5 font-[family-name:var(--font-gaming)] text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-all group-hover:bg-white/20 group-hover:gap-2.5">
           Read Review
-          <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 md:h-3.5 md:w-3.5" />
+          <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
     </Link>
