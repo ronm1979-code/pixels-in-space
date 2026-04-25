@@ -978,7 +978,8 @@
       "Bash(curl -s -X POST https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline -H 'Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ' -H 'Content-Type: application/json' --data @C:/tmp/pis/saros_update_payload.json)",
       "Bash(curl -sL -o /dev/null -w \"Review page: %{http_code}\\\\n\" \"https://pixels-in-space.vercel.app/reviews/saros-review-housemarque-ps5-bullet-ballet-roguelite\")",
       "Bash(curl -sL -o /dev/null -w \"Homepage: %{http_code}\\\\n\" \"https://pixels-in-space.vercel.app/\")",
-      "Bash(curl -sL -o /dev/null -w 'New cover via optimizer: %{http_code}\\\\n' 'https://pixels-in-space.vercel.app/_next/image?url=__TRACKED_VAR__&w=1920&q=75')"
+      "Bash(curl -sL -o /dev/null -w 'New cover via optimizer: %{http_code}\\\\n' 'https://pixels-in-space.vercel.app/_next/image?url=__TRACKED_VAR__&w=1920&q=75')",
+      "Bash(curl -s -X POST https://pixels-in-space-ronm055.aws-eu-west-1.turso.io/v2/pipeline -H 'Authorization: Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzQ5NTUxNzIsImlkIjoiMDE5ZDQzOTItMTQwMS03NTgxLWIwMzQtZGZiNzQ5ZmM5MGJmIiwicmlkIjoiY2M3NGU4OWQtNzMxZC00YzYzLTlhMDUtNjczYmI4ZTNmNGI0In0.7ovsSPQdphTQF4MsAybgFVsK-9wX6qIEkmmauLn3OQM6hJ4CPH9kl-fzND3Or0Dp16p7lLpkoHWmxW98pWV4DQ' -H 'Content-Type: application/json' --data @C:/tmp/pis/revert_cover.json)"
     ]
   }
 }
