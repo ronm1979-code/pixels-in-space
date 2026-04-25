@@ -38,11 +38,11 @@ export function FeaturedReviewHero({
   return (
     <Link
       href={`/reviews/${slug}`}
-      className="group relative block overflow-hidden rounded-2xl border border-purple-500/20 bg-gray-950 shadow-lg lg:h-[448px]!"
+      className="group relative block overflow-hidden rounded-2xl border border-purple-500/20 bg-gray-950 shadow-lg lg:h-[400px]!"
     >
       {/* Background image — portrait on mobile (~30% shorter than before),
           exact carousel-height (400px) on desktop */}
-      <div className="relative aspect-[8/7] w-full lg:aspect-auto! lg:h-[448px]! lg:max-h-[448px] lg:min-h-[448px]">
+      <div className="relative aspect-[8/7] w-full lg:aspect-auto! lg:h-[400px]! lg:max-h-[400px] lg:min-h-[400px]">
         {coverImage && (
           <Image
             src={coverImage}

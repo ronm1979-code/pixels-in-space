@@ -47,7 +47,11 @@ export async function Sidebar({
           <FeaturedReviewHero {...featuredReview} />
         </div>
       )}
-      <TopRatedWidget games={topRated} />
+      {/* Extra top margin on the first widget so it aligns with the news card
+          grid in the main column (which sits below a section header). */}
+      <div className="lg:mt-12">
+        <TopRatedWidget games={topRated} />
+      </div>
       <UpcomingWidget releases={upcoming} />
       <TagsWidget />
     </aside>
