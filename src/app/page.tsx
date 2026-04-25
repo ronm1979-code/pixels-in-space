@@ -98,6 +98,20 @@ export default async function HomePage() {
           </section>
         )}
 
+        {/* Featured Review — mobile only (below carousel). Desktop renders in sidebar. */}
+        {featuredReview && (
+          <section className="mb-10 lg:hidden">
+            <FeaturedReviewHero
+              slug={featuredReview.slug}
+              gameTitle={featuredReview.game.title}
+              verdict={featuredReview.verdict}
+              score={featuredReview.score}
+              coverImage={featuredReview.game.coverImage}
+              publishedAt={featuredReview.publishedAt}
+            />
+          </section>
+        )}
+
         {/* More News */}
         {gridArticles.length > 0 && (
           <section className="mb-14">

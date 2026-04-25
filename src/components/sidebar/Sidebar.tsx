@@ -42,7 +42,11 @@ export async function Sidebar({
 
   return (
     <aside className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
-      {featuredReview && <FeaturedReviewHero {...featuredReview} />}
+      {featuredReview && (
+        <div className="hidden lg:block">
+          <FeaturedReviewHero {...featuredReview} />
+        </div>
+      )}
       <TopRatedWidget games={topRated} />
       <UpcomingWidget releases={upcoming} />
       <TagsWidget />

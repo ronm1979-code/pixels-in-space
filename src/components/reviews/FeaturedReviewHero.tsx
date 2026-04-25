@@ -40,8 +40,8 @@ export function FeaturedReviewHero({
       href={`/reviews/${slug}`}
       className="group relative block overflow-hidden rounded-2xl border border-purple-500/20 bg-gray-950 shadow-lg"
     >
-      {/* Background image — portrait aspect for sidebar column */}
-      <div className="relative aspect-[4/5] w-full">
+      {/* Background image — portrait on mobile, exact carousel-height (385px) on desktop */}
+      <div className="relative aspect-[4/5] w-full lg:aspect-auto lg:h-[385px]">
         {coverImage && (
           <Image
             src={coverImage}
